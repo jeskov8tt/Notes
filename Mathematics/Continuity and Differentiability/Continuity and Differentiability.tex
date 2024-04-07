@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[italicdiff]{physics}
+\usepackage{enumerate}
+\usepackage{microtype}
+\DisableLigatures{encoding= *, family=*}
+\usepackage{titlesec}
+\usepackage{xfrac}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\title{Continuity and Differentiability}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\part*{Continuity}
+
+\section{Continuity of a Function at a Point}
+A function $f(x)$ is said to be continuous at $x=a$; where $a \in \text{domain of $f(x)$}$ \\
+Iff $$\lim\limits_{x \to a^-}{f(x)}=\lim\limits_{x \to a^+}{f(x)}=f(a)$$
+
+\section{Continuity at End Points}
+Let $f(x)$ be defined on $[a,b]$ then 
+\\
+$f(x)$ is continuous at $x=a$ 
+\\
+Iff $$\lim\limits_{x \to a^+}{f(x)}=f(a)$$
+\\
+$f(x)$ is continuous at $x=b$
+\\
+Iff $$\lim\limits_{x \to b^-}{f(x)}=f(b)$$
+
+\section{Discontinuity of a Function}
+A function $f$ is discontinuous if it has any kind of "Breaks".
+
+\subsection{Removable Discontinuity}
+$\lim\limits_{x \to a}{f(x)}$ exists but it is not equal to $f(a)$ or $f(a)$ is not defined.
+\subsubsection{Missing Point Discontinuity}
+$\lim\limits_{x \to a }{f(x)}$ exists but $f(a)$ is not defined.
+
+\subsubsection{Isolated Point Discontinuity}
+$\lim\limits_{x \to a}{f(x)}$ exists but it is not equal to $f(a)$
+
+\subsection{Non-Removable Discontinuity}
+$\lim\limits_{x \to a}{f(x)}$ does not exist.
+
+\subsubsection{Finite Discontinuity (Jump Discontinuity)}
+$\lim\limits_{x \to a^-}{f(x)}=L_{1}, \lim\limits_{x \to a^+}{f(x)}=L_{2},$ 
+$L_{1} \not= L_{2}, L_{1}$ and $L_{2}$ are finite.
+\paragraph{Jump of Discontinuity}
+$|L_{1}-L_{2}|$ is the Jump of Discontinuity
+
+\paragraph{Piecewise Continuous or Sectionally continuous Function}
+A function having a finite number of jumps in a given interval.
+
+\subsubsection{Infinite Discontinuity}
+$\lim\limits_{x \to a^-}{f(x)}=L_{1}$ and $\lim\limits_{x \to a^+}{f(x)}=L_{2}$. Either $L_{1}$ or $L_{2}$ is $\pm \infty$
+\newline \newline
+For graph of $y=f(x)$, if at $x=a$ there is a vertical Asymptote, then there is a Infinite Discontinuity at $x=a$
+
+\subsubsection{Oscillatory Discontinuity}
+$\lim\limits_{x \to a}{f(x)}$ doesn't exist but oscillates between two finite quantites.
+
+e.g. $f(x)=\sin \frac{1}{x}$
+
+\section{Theorems on Continuity}
+\subsection{Theorem 1}
+Sum, difference and product of two continuous functions is always a continuous function. \newline 
+However, quotient $h(x)=\frac{f(x)}{g(x)}$ is continuous at $x=a$ only if $g(a) \not= 0$.
+
+\subsection{Theorem 2}
+If $f(x)$ is continuous and $g(x)$ is discontinuous at $x=a$, then the product function $\phi (x)=f(x) \cdot g(x)$is not necessarily be discontinuous at $x=a$.
+
+\subsection{Theorem 3}
+If $f(x)$ and $g(x)$ both are discontinuous at $x=a$, then the product function $\phi (x)=f(x) \cdot g(x)$ is not necessarily be discontinuous at $x=a$.
+
+\section{Continuity of Composite Functions}
+Let $f(x)$ and $g(x)$ be two discontinuous functions and $g(x)$ is discontinuous $\forall \hspace{2mm} x \in [\alpha, \beta]$ 
+$\left\{\right\}$
+$$On$$ $$ Hold$$
+
+\section{Intermediate Value Theorem}
+If $f(x)$ is continuous $\hspace{1mm} \forall \hspace{2mm} x \in [\alpha,\beta]$ and $f(a) \not= f(b)$, then for any value\\ $L \in (f(a),f(b))$, there exists atleast one number $c \in (a,b)$ for which $f(c)=L$
+
+\section{Continuity of Rational and \\Irrational Functions}
+Consider the function,
+$f:\mathbb{R} \rightarrow \mathbb{R}$
+$$f(x)=\begin{cases}
+    f_{1}(x) & x\in \mathbb{Q} \\
+    f_{2}(x) & x\notin \mathbb{Q}
+\end{cases}$$ \\
+then $f$ is continous at $x \in A$ where $A=\left\{c:f_{1}(c)=f_{2}(c)\right\}$
+
+\part*{Differentiability}
+\section{Meaning of a Derivative}
+\begin{itemize}
+    \item The instantaneous rate of change of a function w.r.t. the independent variable is called the $Derivative$.
+    \item Derivative also represents the slope of tangent line on a curve.
+    \item Derivative of a function $f$ is generally denoted by $$f'(x), \dv{x}(f(x)), \dv{f(x)}{x}, \dv{x}f(x)$$
+    \item Fundamental Definition of a Derivative $$f(x)=\lim\limits_{\Delta x \to 0}{\dfrac{f(x+\Delta x)-f(x)}{\Delta x}}$$
+    \item Evalution of Derivative at a point (Say $a$) is denoted by $$f'(a), \dv{x}(f(x)) \biggr\rvert_{x=a}$$
+\end{itemize}
+
+\section{Existance of a Derivative}
+The derivative of a function $f$ exists at $x=a$,\\ iff, $$\lim\limits_{h \to 0}{\dfrac{f(x+h)-f(x)}{h}}$$ exists and is finite
+\\ Derivative doesn't exist at sharp points.
+
+\subsection{Right Hand Derivative}
+The Right Hand Derivative of $f(x)$ at $x=a$ is 
+$$f'(a^+)=\lim\limits_{h \to 0^+}{\frac{f(a+h)-f(a)}{h}}$$
+
+\subsection{Left Hand Derivative}
+The Left Hand Derivative of $f(x)$ at $x=a$ is 
+$$f'(a^-)=\lim\limits_{h \to 0^-}{\dfrac{f(a+h)-f(a)}{h}}$$
+
+\section{Relation between Continuity and \\Differentiability}
+If a function is differentiable at a point, it is necessarily continuous at that point. But the converse is not necessarily true.
+\end{document}
