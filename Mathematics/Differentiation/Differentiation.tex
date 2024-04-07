@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[italicdiff]{physics}
+\usepackage{enumerate}
+
+\title{Differetiation}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Fundamental Definition of a Derivative}
+
+$$
+f'(x)=\lim\limits_{h \to 0}{\frac{f(x+h)-f(x)}{h}}=\lim\limits_{h \to x}{\frac{f(h)-f(x)}{h-x}}
+$$
+
+\section{Derivatives of Standard Functions}
+
+\begin{enumerate}[i]
+    \item $\dv{x}(constant)=0$
+    \item $\dv{x}(x^n)=nx^{n-1}$
+    \item $\dv{x}(\sqrt{x})=\frac{1}{2\sqrt{x}}$
+    \item $\dv{x}(|x|)=\frac{x}{|x|}$
+    \item $\dv{x}(e^x)=e^x$
+    \item $\dv{x}(a^x)=a^x \cdot \ln a$
+    \item $\dv{x}(\ln |x|)=\frac{1}{x}$
+    \item $\dv{x}(\log_{a}{|x|})=\frac{1}{x\ln a}$
+    \item $\dv{x}(\sin x)=\cos x$
+    \item $\dv{x}(\cos x)=-\sin x$
+    \item $\dv{x}(\tan x)=\sec^2 x$
+    \item $\dv{x}(\cot x)=-\csc^2 x$
+    \item $\dv{x}(\sec x)=\sec x \tan x$
+    \item $\dv{x}(\csc x)=-\csc x \cot x$
+    \item $\dv{x}(\sin^{-1}x)=\frac{1}{\sqrt{1-x^2}}$
+    \item $\dv{x}(\cos^{-1}x)=-\frac{1}{\sqrt{1-x^2}}$
+    \item $\dv{x}(\tan^{-1}x)=\frac{1}{1+x^2}$
+    \item $\dv{x}(\sec^{-1}x)=\frac{1}{|x|\sqrt{x^2-1}}$
+    \item $\dv{x}(\cot^{-1}x)=-\frac{1}{1+x^2}$
+    \item $\dv{x}(\csc^{-1}x)=-\frac{1}{|x|\sqrt{x^2-1}}$
+    \item $\dv{x}(x^x)=x^x(1+\ln x)$
+\end{enumerate}
+\section{Rules of Differetiation}
+\begin{itemize}
+    \item $\dv{x}(f(x)\pm g(x))=f'(x) \pm g'(x)$
+    \item $\dv{x}(k\cdot f(x))=k\cdot f(x)$
+    \item $\dv{x}(f(x)\cdot g(x))=f(x)g'(x)+g(x)f'(x) \hspace{2mm} \text{1st function derivative of 2nd +} \\ \text{\hspace{6.1cm} 2nd function derivative of 1st}$
+    \item $\dv{x}(f_{1}(x) f_{2}(x) f_{3}(x) \ldots f_{n}(x))=[f'_{1}(x) f_{2}(x) f_{3}(x) \ldots f_{n}(x)]
+    \\\hphantom{1cm} \hspace{3.9cm}+[f_{1}(x) f'_{2}(x) f_{3}(x) \ldots f_{n}(x)]
+    \\\hphantom{1cm} \hspace{3cm}+[f_{1}(x) f_{2}(x) f'_{3}(x) \ldots f_{n}(x)] 
+    \\\hphantom{1cm} \hspace{3cm} + \ldots + [f_{1}(x) f_{2}(x) f_{3}(x) \ldots f'_{n}(x)]$
+    \item $\dv{x}(\frac{f(x)}{g(x)})=\frac{g(x) f'(x)-f(x)g'(x)}{g^2(x)} \hspace{1cm}\text{Low DHigh - High DLow square the} 
+    \\ \hphantom{1cm} \hspace{4.8cm} \text{ bottom and the way we go}$
+    \item $\dv{x}(f(g(x)))=f'(g(x)) \cdot g'(x)$
+\end{itemize}
+\section{Implicit Differetiation}
+$\dv{x}(f(x,y))=-\frac{\pdv{x}(f(x,y))}{\pdv{y}(f(x,y))}$ \hspace{2mm} \text{OR} \hspace{2mm} \text{Differentiate both sides w.r.t. $x$ of the given} \\ \hphantom{1cm} \hspace{4.5cm} \text{relation, then solve for $\dv{y}{x}$}
+
+\section{Inverse Trigonometric Substitutions}
+\begin{center}
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{l l}
+        \textbf{Expression} & \textbf{Substitution} \\
+        $\sqrt{a^2-x^2}$ & $x=a \sin \theta$\\
+        $\sqrt{a^2+x^2}$ & $x=a \tan \theta \hspace{2mm} \text{or} \hspace{2mm}a \cot \theta$\\
+        $\sqrt{x^2-a^2}$ & $x= a \sec \theta\hspace{2mm} \text{or} \hspace{2mm} a \csc \theta$\\
+        $\sqrt{\frac{a+x}{a-x}}\hspace{2mm} \text{or} \hspace{2mm}\sqrt{\frac{a-x}{a+x}}$ & $x= a \cos \theta\hspace{2mm} \text{or}\hspace{2mm} a \cos 2 \theta$\\
+        $\sqrt{(a-x)(x-b)}\hspace{2mm} \text{or} \hspace{2mm}\sqrt{\frac{a-x}{x-b}}\hspace{2mm} \text{or} \hspace{2mm}\sqrt{\frac{x-b}{a-x}}$ & $x= a \cos^2 \theta-b \sin^2 \theta$\\
+        $\sqrt{2ax-x^2}$ & $x=a(1-\cos \theta)$
+    \end{tabular}
+\end{center}
+\section{Parametric Derivatives}
+\begin{itemize}
+    \item Let $x=g(t)$, $y=f(t)$, If possible, eliminate $t$ and obtain the relation between $y$ and $x$. Now differentiate this relation implicitly.
+    \item If it is not possible to eliminate $t$ then
+    \\
+    $$\dv{y}{x}=\frac{\dv{y}{t}}{\dv{x}{t}}=\frac{f'(t)}{g'(t)}$$
+\end{itemize}
+\section{Logarithmic Differentiation}
+
+    If $y= u^v$ where, $u=f(x), v= g(x)$\\ then take $\ln$ on both sides $\implies \ln y = v \ln u.$ Now differentiate this realtion implicitly. \\
+    \hphantom{1cm}\hspace{5cm} OR \\
+    $$\dv{y}{x}=\pdv{y}{u}+\pdv{y}{v}$$
+
+\section{Derivative of functions in product}
+To differentiate, $\phi (x)= f_{1}(x) \cdot f_{2}(x) \cdot f_{3}(x) \cdot \ldots \cdot f_{n}(x)$, 
+take $\ln$ both sides then differentiate implicitly to get, 
+
+$$\dv{x}(\phi (x))=\left(f_{1}(x) \cdot f_{2}(x) \cdot f_{3}(x) \cdot \ldots \cdot f_{n}(x)\right)\left(\frac{f_{1}'(x)}{f_{1}(x)}+\frac{f_{2}'(x)}{f_{2}(x)}+ \ldots +\frac{f_{n}'(x)}{f_{n}(x)}\right)$$ \\ \hphantom{1cm} \hspace{5 cm} OR
+$$\dv{x}(\phi (x))=\prod_{i=1}^{n} f_{i}(x) \cdot \displaystyle\sum_{i=1}^{n} \frac{f_{i}'(x)}{f_{i}(x)}$$
+
+\section{Differentiation w.r.t. Another Function}
+Let $u=f(x)$, $v=g(x)$ to find $\dv{v}{u}$ or $\dv{u}{v}.$ \\
+First, find $\dv{x}(u)$ and $\dv{x}(v)$. \\
+Now, $\dv{u}{v}=\dv{u}{x}\cdot \dv{x}{v}\implies \dv{u}{v}=\frac{\dv{u}{x}}{\dv{v}{x}}=\frac{u'}{v'}$ \\ \\
+\hphantom{1cm} \hspace{5cm} OR \\
+$$\dv{f(x)}{g(x)}=\frac{f'(x)}{g'(x)}$$
+
+\section{Higher Order Derivatives}
+$nth$ derivative of $f(x)$ w.r.t. $x$ is denoted by $\dv[n]{x}(f(x))$ \\
+$\dv[n]{x}(f(x))=\underbrace{\frac{d}{dx}\left(\frac{d}{dx} \left(\frac{d}{dx} \left(\ldots \dv{x}(f(x))\right)\right)\right)}_\text{n times}$
+\subsection{Higher Order Parametric Derivatives}
+Let $x=\phi (t), y=\psi (x)$ then $\dv[2]{y}{x}=\frac{d}{dx}\left(\frac{\psi'(x)}{\phi'(x)}\right)=\frac{d}{dt}\left(\frac{\psi'(x)}{\phi'(x)}\right)\cdot \dv{t}{x}$
+
+\section{Derivative of a Determinant}
+Let $\Delta=\begin{vmatrix}
+    u(x)&v(x)&w(x)\\
+    p(x)&q(x)&r(x)\\
+    \lambda (x)&\mu(x)&\eta(x)
+\end{vmatrix}$ \\ then, $$\dv{\Delta}{x}=\begin{vmatrix}
+    u'(x)&v'(x)&w'(x)\\
+    p(x)&q(x)&r(x)\\
+    \lambda (x)&\mu(x)&\eta(x)
+\end{vmatrix} + \begin{vmatrix}
+    u(x)&v(x)&w(x)\\
+    p'(x)&q'(x)&r'(x)\\
+    \lambda (x)&\mu(x)&\eta(x)
+\end{vmatrix}+\begin{vmatrix}
+    u(x)&v(x)&w(x)\\
+    p(x)&q(x)&r(x)\\
+    \lambda' (x)&\mu'(x)&\eta'(x)
+\end{vmatrix}$$
+
+\section{Derivative of Inverse Functions}
+Let inverse of $y=f(x)$ be $f^{-1}(x)$
+$$\dv{x}(f^{-1}(x))=\frac{1}{\dv{x}(f(x))}$$
+\hspace{6cm} OR
+$$\left(f^{-1}(y)\right)'=\frac{1}{f'(x)}$$
+\end{document}
