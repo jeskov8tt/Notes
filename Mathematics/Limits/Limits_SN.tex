@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\title{Limits}
+\date{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section{Indeterminate Forms}
+7 indeterminate forms are,
+
+$
+\frac{0}{0}, \frac{\infty}{\infty}, \infty - \infty, 1^\infty, 0^0, \infty^0, \infty \cdot 0
+$
+
+\section{L'Hôpital's Rule}
+$L=\lim\limits_{x \to a}{\frac{f(x)}{g(x)}}= \lim\limits_{x\to a}{\frac{f'(x)}{g'(x)}}\iff \frac{f(a)}{g(a)}=\frac{0}{0} \hspace{2mm} \lor \frac{\infty}{\infty}$
+
+\section{Taylor Expansions}
+\begin{enumerate}
+    \item $e^x=\displaystyle\sum_{n=0}^{\infty} \frac{x^n}{n!}=1+x+\frac{x^2}{2!}+ \ldots \infty$
+    \item $a^x=e^{xlna}=\displaystyle\sum_{n=0}^{\infty} \frac{{\left(x \ln a\right)^n}}{n!}=1+x \ln a + \frac{\left(x \ln a \right)^2}{2!}+ \ldots \infty \hspace{1cm} a \in \mathbb{R^+}$
+    \item $\left(1+x\right)^n=1+\frac{nx}{1!}+\frac{n\left(n-1\right)x^2}{2!}+\frac{n\left(n-1\right)\left(n-2\right)x^3}{3!}+ \ldots \infty$
+    \item $\ln \left(1+x\right)=\displaystyle\sum_{n=0}^{\infty} \frac{\left(-1\right)^nx^n}{n}=x-\frac{x^2}{2}+\frac{x^3}{3} +\ldots \infty \hspace{1cm} x \in (-1,1]$
+    \item $\frac{x^n-a^n}{x-a}=\displaystyle\sum_{r=0}^{n-1} a^r \cdot x^{n-r-1}=x^{n-1}+ax^{n-2}+a^2x^{n-3}+\ldots +a^{n-1}$
+
+    \item $\left(1+x\right)^\frac{1}{x}=e\left(1-\frac{x}{2}+\frac{11x^2}{24}+ \ldots \infty\right)$
+
+    \item $\sin x=\displaystyle\sum_{n=0}^{\infty} \frac{\left(-1\right)^nx^{2n+1}}{(2n+1)!}=x-\frac{x^3}{3!}+\frac{x^5}{5!}- \ldots \infty$
+
+    \item $\cos x = \displaystyle\sum_{n=0}^{\infty} \frac{\left(-1\right)^nx^{2n}}{(2n)!}=1-\frac{x^2}{2!}+\frac{x^4}{4!}+ \ldots \infty$
+
+    \item $\tan x=x+\frac{x^3}{3}+\frac{2x^5}{15}+\frac{17x^7}{315}+\ldots \infty$
+
+    \item $\sin^{-1} x=x+\frac{1^2x^3}{3!}+\frac{1^2 \cdot 3^2x^5}{5!}+\frac{1^2 \cdot 3^2 \cdot 5^2 x^7}{7!}+ \ldots \infty$
+
+    \item $\tan^{-1} x = x- \frac{x^3}{3}+\frac{x^5}{5}+\ldots \infty$
+
+    \item $\sec^{-1} x=1+\frac{x^2}{2!}+\frac{5x^4}{4!}+\frac{61x^6}{6!}+\ldots \infty$
+
+    \item $\left(\sin^{-1} x\right)^2=\frac{2x^2}{2!}+\frac{2 \cdot 2^2x^4}{4!}+\frac{2\cdot2^2\cdot4^2x^6}{6!}+\ldots \infty$
+
+    \item $x\cot x= 1-\frac{x^3}{3}+\frac{x^4}{45}-\frac{2x^6}{945}+\ldots \infty$
+
+    \item $\sec x= 1+\frac{x^2}{2}+\frac{5x^4}{24}+\frac{61x^6}{720}+\ldots \infty$
+
+    \item $x \csc x= 1 + \frac{x^2}{6}+\frac{7x^4}{360}+\frac{31x^6}{15120}+\ldots \infty$
+    
+\end{enumerate}
+
+\section{Standard Limits}
+\begin{enumerate}
+    \item $\lim\limits_{x\to a}{\frac{x^n-a^n}{x-a}}=n\cdot a^{n-1} \hspace{2cm} a \in \mathbb{R}$
+    \item $\lim\limits_{x \to \infty}{\frac{a_{m}x^m+a_{m-1}x^{m-1}+\ldots +a_{1}x+a_{0}}{b_{n}x^n+b_{n-1}x^{n-1}+\ldots +b_{1}x+b_{0}}}=
+    \begin{cases}
+        0 & m<n \\
+        \frac{a_{m}}{b_{n}} & m=n \\
+        +\infty & m>n \hspace{1mm} \land \hspace{1mm}a_{m}\cdot b_{n}>0 \\
+        -\infty & m>n \hspace{1mm} \land \hspace{1mm} a_{m}\cdot b_{n}<0
+    \end{cases}$
+
+    \item If $A,B \in \{\sin x, \tan x,\sin^{-1} x, \tan^{-1} x, x\}$, \newline \newline then $\lim\limits_{x \to 0}{\frac{A}{B}}=1$
+    \item $\lim\limits_{x \to 0}{\frac{\sin x^\circ}{x}}=\frac{\pi}{180^\circ}$
+    \item $\lim\limits_{x \to 0}{\frac{\ln \left(1+x\right)}{x}}=1$
+
+    \item $\lim\limits_{x \to 0}{\frac{e^x-1}{x}}=1$
+    \item $\lim\limits_{x \to 0}{\frac{a^x-1}{x}=\ln a}$
+    \item $\lim\limits_{x \to \infty}{\left(1+\frac{n}{x}\right)^x}=e^n$
+    \item $\lim\limits_{x \to 0}{\left(1+nx\right)^\frac{1}{x}}=e^n$
+\end{enumerate}
+
+\section{Algebra of Limits}
+If $\lim\limits_{x \to a}{f(x)}=L \hspace{2mm} \land \hspace{2mm} \lim\limits_{x \to a}{g(x)}=M$ where $L,M \in \mathbb{R}$ and are finite
+\newline then \begin{itemize}
+    \item $\lim\limits_{x \to a}{\left(f(x)\pm g(x)\right)}=L\pm M$
+    \item $\lim\limits_{x \to a}{\left(f(x)\cdot g(x)\right)}=L\cdot M$
+    \item $\lim\limits_{x \to a}{\left(\frac{f(x)}{g(x)}\right)}=\frac{L}{M} \hspace{2mm} M \not= 0$
+    \item $\lim\limits_{x \to a}{k\cdot f(x)}=k\cdot L \hspace{2mm} k \in \mathbb{R}$
+\end{itemize}
+
+
+\end{document}
