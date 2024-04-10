@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[italicdiff]{physics}
+\usepackage{enumerate}
+\usepackage{microtype}
+\DisableLigatures{encoding= *, family=*}
+\usepackage{titlesec}
+\usepackage{xfrac}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\title{Functions}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Function}
+\begin{itemize}
+    \item Let $A$ and $B$ be two non-empty sets and $f$ be a relation which associates each element of set $A$ with unique element of set $B$, $f$ is called a function from $A$ to $B$.
+    \item If any line $\parallel$ to axis of $y$ intersects graph of $y=f(x)$ at more than once then, $f$ is not a function.
+\end{itemize}
+
+\subsection{Domain}
+Let $f:A \rightarrow B$ be a function then set $A$ which consits all those elements for which image under $f$ is well-defined, is called $Domain$ of $f$.
+
+\subsubsection{Suggestions on finding domain of $f$}
+\begin{enumerate}[i.]
+    \item If $f(x)=\sqrt[2n]{g(x)}$ then Dom $f$ $\in g(x) \geq 0$
+    \item If $f(x)=\dfrac{1}{g(x)}$ then Dom $f$ $\in \mathbb{R}-\left\{x:x=a, g(a)=0\right\}$
+    \item If $f(x)=\log_{h(x)}{g(x)}$ then Dom $f$ $\in \left\{x:x=a,g(a)> 0\right\} \bigcap \left\{x:x=a, h(a)>0 \lor h(a) \not= 1\right\}$
+    \item If $f(x)=g(x) + h(x)$ then Dom $f$ $\in \text{Dom} \hspace{1mm} g \bigcap \text{Dom} \hspace{1mm} h$
+\end{enumerate}
+\subsection{Co-domain}
+Set $B$ is Co-domain of $f$.
+\subsection{Range}
+Range of $f$ is set of images of elements in domain $A$ under $f$.
+
+\section{Periodic Functions}
+A function $f(x)$ is said to be periodic if there exist a +ve real number $\lambda$ such that $$f(x+\lambda)=f(x)$$ The smallest of all such $\lambda$ is called the fundamental periodic or "periodic" of $f$.
+
+\subsection{Period of some Standard functions}
+\begin{tabular}{c c}
+    Function                                     & Periodic                                      \\
+    $\sin ^n x, \cos ^n x, \sec ^n x, \csc ^n x$ & $\begin{cases}
+                                                            \pi  & n \in even                            \\
+                                                            2\pi & n \in odd \hspace{1mm} \lor  fraction
+                                                        \end{cases}$ \\
+    $\tan ^n x, \cot ^n x$                       & $\pi n \in $ even $\lor$ odd                  \\
+    $\abs{\sin x},\abs{\cos x}, \abs{\tan x}, \abs{\cot x}, \abs{\sec x}, \abs{\csc x}$ & $\pi$
+\end{tabular}
+\section{Odd and Even Functions}
+\subsection*{Odd Functions}
+A function $f$ is odd if, $$f(-x)=-f(x)$$ i.e. symmetric about origin.
+
+\subsection*{Even Functions}
+A function $f$ is even if, $$f(x)=f(-x)$$ i.e. symmetric about axis of $y$.
+
+\subsection*{Properties}
+\begin{enumerate}[i.]
+    \item Product of two even or two odd is even.
+    \item Product of odd and even is odd.
+    \item Every function can be expressed as sum of a odd and even function.
+    \item Derivative of odd is even and Derivative of even is odd.
+    \item Even function or odd function when squared becomes even.
+    \item Only function which is both even and odd is $f(x)=0$
+\end{enumerate}
+\end{document}
