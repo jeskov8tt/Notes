@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[italicdiff]{physics}
+\usepackage{enumerate}
+\usepackage{microtype}
+\DisableLigatures{encoding= *, family=*}
+\usepackage{titlesec}
+\usepackage{xfrac}
+\setcounter{secnumdepth}{4}
+\usepackage{xcolor}
+\usepackage[bookmarks=false]{hyperref}
+\usepackage{mathtools}
+\usepackage{multicol}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[RGB]{59 108 209},
+    urlcolor=[RGB]{59 108 209}
+}
+\urlstyle{same}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\title{Indefinite Integration}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Fundamental Definition of Indefinite Integration}
+If $f$ and $F$ and functions such that $\displaystyle\dv{x}(F(x))=f(x)$ then $F$ is anti-derivative of $f$ w.r.t. $x$ symbolically, $$\displaystyle\int f(x) \,dx=F(x)+C$$
+where $C$ is constant of Integration
+
+\section{Anti-Derivatives of some standard functions}
+\begin{enumerate}[i.]
+    \item $\displaystyle\int x^n \, dx=\dfrac{x^{n+1}}{n+1} +C \hfill \forall \hspace{2mm} n \in \mathbb{R}-\left\{1\right\}, x \in \mathbb{R}$
+    \item $\displaystyle\int \dfrac{1}{x} \, dx=\ln \abs{x} +C \hfill \forall \hspace{2mm} x \in \mathbb{R}- \left\{0\right\}$
+    \item $\displaystyle\int e^x \, dx=e^x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}$
+    \item $\displaystyle\int a^x \, dx=\dfrac{a^x}{\ln a} +C \hfill \forall \hspace{2mm} a \in \mathbb{R}^+-\left\{1\right\}, x \in \mathbb{R}$
+    \item $\displaystyle\int \sin x \, dx=\cos x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}$
+    \item $\displaystyle\int \cos x \, dx=\sin x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}$
+    \item $\displaystyle\int \sec^2 x \, dx=\tan x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}-\left\{(2n+1)\dfrac{\pi}{2}:n \in \mathbb{Z}\right\}$
+    \item $\displaystyle\int \csc^2 x \, dx=-\cot x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}-\left\{n\pi:n \in \mathbb{Z}\right\}$
+    \item $\displaystyle\int \sec x \tan x \, dx=\sec x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}-\left\{(2n+1)\dfrac{\pi}{2}:n \in \mathbb{Z}\right\}$
+    \item $\displaystyle\int \csc x \cot x \, dx=-\csc x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}-\left\{n\pi:n\in \mathbb{Z}\right\}$
+    \item $\displaystyle\int \cot x \, dx=\ln |\sin x| +C \hfill \forall \hspace{2mm} x \in \mathbb{R}-\left\{n\pi:n\in \mathbb{Z}\right\}$
+    \item $\displaystyle\int \tan x \, dx=-\ln |\cos x| +C \hfill \forall \hspace{2mm} x \in \mathbb{R}-\left\{(2n+1)\dfrac{\pi}{2}:n\in \mathbb{Z}\right\}$
+    \item $\displaystyle\int \sec x \, dx=\ln |\sec x + \tan x| +C \hfill \forall \hspace{2mm}  \in $
+    \item $\displaystyle\int \csc x \, dx=\ln |\csc x-\cot x| +C \hfill \forall \hspace{2mm}  \in $
+    \item $\displaystyle\int \dfrac{1}{\displaystyle\sqrt{a^2-x^2}} \, dx=\sin^{-1} \left(\dfrac{x}{a}\right) +C \hfill \forall \hspace{2mm}  a\in \mathbb{R}-\left\{0\right\}$
+    \item $\displaystyle\int \dfrac{-1}{\displaystyle\sqrt{a^2-x^2}} \, dx=\cos^{-1} \left(\frac{x}{a}\right) +C \hfill \forall \hspace{2mm}  a\in\mathbb{R}-\left\{0\right\} $
+    \item $\displaystyle\int \dfrac{1}{a^2+x^2} \, dx=\frac{1}{a} \tan^{-1}\left(\frac{x}{a}\right)+C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
+    \item $\displaystyle\int \dfrac{-1}{a^2+x^2} \, dx=\frac{1}{a} \cot^{-1}\left(\frac{x}{a}\right)+C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
+    \item $\displaystyle\int \frac{1}{x\displaystyle\sqrt{x^2-a^2}} \, dx=\frac{1}{a}\sec^{-1}\left(\frac{x}{a}\right)  +C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
+    \item $\displaystyle\int \dfrac{-1}{x\displaystyle\sqrt{x^2-a^2}} \, dx=\frac{1}{a}\csc^{-1}\left(\frac{x}{a}\right) +C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
+
+\end{enumerate}
+\end{document}
