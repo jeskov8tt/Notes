@@ -31,12 +31,14 @@
 \begin{document}
 \maketitle
 
-\section{Fundamental Definition of Indefinite Integration}
+\section{Fundamental Definition of \\ Indefinite Integration}
 If $f$ and $F$ and functions such that $\displaystyle\dv{x}(F(x))=f(x)$ then $F$ is anti-derivative of $f$ w.r.t. $x$ symbolically, $$\displaystyle\int f(x) \,dx=F(x)+C$$
 where $C$ is constant of Integration
 
-\section{Anti-Derivatives of some standard functions}
+\section{Anti-Derivatives of Some Standard Functions}
 \begin{enumerate}[i.]
+    \item $\displaystyle\int k\cdot f(x) \, dx = k \cdot \displaystyle\int f(x) \, dx \hfill \forall \hspace{2mm} k \in \mathbb{R}$
+    \item $\displaystyle\int [f_{1}(x)\pm f_{2}(x)\pm f_{3}(x)\pm \ldots \pm f_{n}(x)] \, dx= \displaystyle\int f_{1}(x) \, dx\pm \displaystyle\int f_{2}(x) \, dx\pm \hphantom{1cm}\hspace{3cm} \displaystyle\int f_{3}(x) \, dx \pm \ldots \displaystyle\int f_{n}(x) \, dx \hfill \forall \hspace{1mm} n \in \mathbb{N} $
     \item $\displaystyle\int x^n \, dx=\dfrac{x^{n+1}}{n+1} +C \hfill \forall \hspace{2mm} n \in \mathbb{R}-\left\{1\right\}, x \in \mathbb{R}$
     \item $\displaystyle\int \dfrac{1}{x} \, dx=\ln \abs{x} +C \hfill \forall \hspace{2mm} x \in \mathbb{R}- \left\{0\right\}$
     \item $\displaystyle\int e^x \, dx=e^x +C \hfill \forall \hspace{2mm} x \in \mathbb{R}$
@@ -57,6 +59,14 @@ where $C$ is constant of Integration
     \item $\displaystyle\int \dfrac{-1}{a^2+x^2} \, dx=\frac{1}{a} \cot^{-1}\left(\frac{x}{a}\right)+C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
     \item $\displaystyle\int \frac{1}{x\displaystyle\sqrt{x^2-a^2}} \, dx=\frac{1}{a}\sec^{-1}\left(\frac{x}{a}\right)  +C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
     \item $\displaystyle\int \dfrac{-1}{x\displaystyle\sqrt{x^2-a^2}} \, dx=\frac{1}{a}\csc^{-1}\left(\frac{x}{a}\right) +C \hfill \forall \hspace{2mm} a \in \mathbb{R}-\left\{0\right\}$
+    \item $\displaystyle\int \sqrt{x} \, dx=\dfrac{2x\sqrt{x}}{3}+C$
 
+\end{enumerate}
+\subsection*{Star Points}
+\begin{enumerate}
+    \item If $f(x)$ is continuous $\forall \hspace{1mm} x \in D_{f}$ and,
+          \newline \newline $\displaystyle\int f(x) \, dx=F(x)+C$ on hold
+    \item If $f(x)$ is discontinuous at $x=x_{1}$, then its anti-derivative can be continuous at $x=x_{1}$.
+    \item Anti-derivative of a periodic function may not be periodic.
 \end{enumerate}
 \end{document}
