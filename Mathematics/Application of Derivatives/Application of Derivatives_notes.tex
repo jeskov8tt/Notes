@@ -23,7 +23,7 @@
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
+\usepackage{graphicx}
 \title{Application of Derivatives}
 \author{}
 \date{}
@@ -124,10 +124,37 @@ Let $S_{1} \equiv y_{1}=f(x)$ and $S_{2} \equiv y_{2}=g(x)$. \\ Now, let the poi
 $$\tan \theta = \abs{\dfrac{\displaystyle\dv{y_{1}}{x} \biggr\rvert_{P}-\displaystyle\dv{y_{2}}{x} \biggr\rvert_{P}}{1+\displaystyle\dv{y_{1}}{x} \biggr\rvert_{P} \cdot \displaystyle\dv{y_{2}}{x} \biggr\rvert_{P}}}$$
 
 \subsection*{Orthogonal Curves}
-If the Angle of Intersection of Two Curves is a right angle, then the two curves are said to be Orthogonal.
+If the Angle of Intersection of Two Curves is a right angle, then the two curves are considered Orthogonal.
 $$\displaystyle\dv{y_{1}}{x} \biggr\rvert_{P} \cdot \displaystyle\dv{y_{2}}{x} \biggr\rvert_{P}=-1$$
 
 \subsection*{Conditon for Two Curves to Touch}
 $\tan \theta = 0$
 $$\displaystyle\dv{y_{1}}{x} \biggr\rvert_{P}=\displaystyle\dv{y_{2}}{x} \biggr\rvert_{P}$$
+
+\section{Length of Tangent, Length of Normal,\\ Subtangent, Subnormal}
+Let $y=f(x)$ be a curve and $P\left(x_{1},y_{1}\right)$ be a point on it.
+
+\graphicspath{{./images/}}
+\includegraphics[scale=0.4]{image.png}
+
+\subsection{Length of Tangent}
+The portion of the tangent intercepted between the point of contact and $x$ axis.
+
+$$\textbf{Len(Tangent)}=PT=\abs{y_{1}\displaystyle\sqrt{1+\left(\dv{x}{y}\biggr\rvert_{P}\right)^2}}$$
+
+\subsection{Length of Normal}
+The portion of the normal intercepted between the point of contact and $x$ axis.
+
+$$\textbf{Len(Normal)}=PN=\abs{y_{1}\displaystyle\sqrt{1+\left(\dv{y}{x} \biggr\rvert_{P}\right)^2}}$$
+
+\subsection{Subtangent}
+The projection on the $x$ axis of the Length of Tangent.
+
+$$\textbf{Subtangent}=ST=\abs{y_{1}\cdot \dv{x}{y} \biggr\rvert_{P}}$$
+
+\subsection{Subnormal}
+The projection on the $x$ axis of the Length of Normal.
+
+$$\textbf{Subnormal}=SN=\abs{y_{1}\cdot \dv{y}{x} \biggr\rvert_{P}}$$
+
 \end{document}
