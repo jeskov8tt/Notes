@@ -157,4 +157,70 @@ The projection on the $x$ axis of the Length of Normal.
 
 $$\textbf{Subnormal}=SN=\abs{y_{1}\cdot \dv{y}{x} \biggr\rvert_{P}}$$
 
+\section{Rolle's Theorem}
+If $f$ is a real-valued function defined on the closed interval $[a,b]$ such that \begin{enumerate}[i.]
+    \item $f(x)$ is continuous in the closed interval $[a,b]$
+    \item $f(x)$ is differentiable in the open interval $(a,b)$
+    \item $f(a)=f(b)$
+\end{enumerate} Then, there is at least one value $c$ in $(a,b)$ for which $f'(c)=0$ 
+
+\section{Lagrange's Mean Value Theorem}
+\subsection*{First Form}
+If a function $f(x)$, \begin{enumerate}[i.]
+    \item is continuous in the closed interval $[a,b]$
+    \item is differentiable in the open interval $(a,b)$
+\end{enumerate} Then, there is at least one value $c \in (a,b)$, such that $$f'(c)=\dfrac{f(b)-f(a)}{b-a}$$
+\subsection*{Second Form}
+If $b=a+h$, $c=a + \theta h$, where $0<\theta <1 \hfill [a<c<b]$
+
+Then, the mean value theorem can be stated as follows:
+
+If $i. f(x)$ is continuous in the closed interval $[a,a+h]$
+
+$ii. f'(x)$ exists in the open interval $(a,a+h)$, then there exists at least one number $\theta \in (0,1)$, such that $$f(a+h)=f(a)+hf'(a+\theta h)$$
+
+\section{Analysis of Cubic Polynomial}
+Let $f(x)=ax^3+bx^2+cx+d$
+
+\begin{itemize}
+    \item \textbf{Case I} $f'(x)$ has no Real Root.
+
+    $\implies D<0$ 
+    
+    $\therefore f(x)=0$ has One Real Root and Two Imaginary Roots.
+    \item \textbf{Case II} $f'(x)$ has Two Equal Roots.
+
+    Let the repeated root of $f'(x)$ be $x=\alpha$
+
+    $\implies f'(x)=k\left(x-\alpha\right)^2$
+
+    $\implies f(x)=\dfrac{k\left(x-\alpha\right)^3}{3}+C$
+
+    If $C=0$, $f(x)=0$ has Three Real Equal Roots.
+
+    If $C \not= 0$, $f(x)=0$ has One Real Root and Two Imaginary Roots.
+    \item \textbf{Case III} $f'(x)$ has Two Real and Distinct Roots
+
+    Let roots of $f'(x)=0$ be $\alpha, \beta$
+    \begin{enumerate}[i.]
+        \item $f(\alpha)\cdot f(\beta)>0$
+
+        $f(x)=0$ has One Real and Two Imaginary Roots.
+
+        \item $f(\alpha)f(\beta)<0$
+
+        $f(x)=0$ has Three Real and Distinct Roots.
+
+        \item $f(\alpha)\cdot f(\beta)=0$
+
+        $f(\alpha)=0$ or $f(\beta)=0$
+
+        $f(x)=0$ has Three Real Roots of which Two are equal.
+
+        \item The Graph of every cubic polynomial must have exactly one point of inflection.
+    \end{enumerate}
+\end{itemize}
+
+\section{Shortest Distance Between Two Curves}
+The shortest Distance Between Two Curves always lies along the common normal.
 \end{document}
