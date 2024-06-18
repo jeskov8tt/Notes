@@ -1,0 +1,589 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[italicdiff]{physics}
+\usepackage{enumerate}
+\usepackage{microtype}
+\DisableLigatures{encoding= *, family=*}
+\usepackage{titlesec}
+\usepackage{xfrac}
+\setcounter{secnumdepth}{4}
+\usepackage{xcolor}
+\usepackage[bookmarks=false]{hyperref}
+\usepackage{mathtools}
+\usepackage{bigints}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[RGB]{59 108 209},
+    urlcolor=[RGB]{59 108 209}
+}
+\urlstyle{same}
+
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\title{Matrices}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Types of Matrices}
+
+\subsection{Row Matrix or Row Vector}
+
+A matrix which contains only \textbf{One Row}.
+
+$$A= {\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{1 \cross n}$$
+
+\subsection{Column Matrix or Column Vector}
+
+A matrix which contains only \textbf{One Column}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross 1} $$
+
+\subsection{Rectangular Matrix}
+
+A matrix in which \textbf{no. of rows is not equal to no. of columns}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix} }_{m \cross n}, m \not= n $$
+
+\subsection{Square Matrix}
+
+A matrix in which \textbf{no. of rows is equal to no. of columns}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n} $$
+
+\subsection{Diagonal Matrix}
+
+A \textbf{square matrix} in which \textbf{all non-diagonal entries are zero}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, a_{ij}=0 \hspace{2mm} \forall \hspace{2mm} i \not= j, a_{ij} \not= 0 \hspace{2mm} \forall \hspace{2mm} i=j$$
+
+\subsection{Scalar Matrix}
+
+A \textbf{Diagonal Matrix} in which \textbf{all diagonal entries are equal}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, a_{ij} = \begin{cases}
+        a & i=j, a \in \mathbb{C} \\
+        0 & i \not= j
+    \end{cases} $$
+
+\subsection{Identity or Unit Matrix}
+
+A \textbf{Diagonal Matrix} in which \textbf{all diagonal entries equal 1}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, a_{ij}=\begin{cases}
+        1 & i=j       \\
+        0 & i \not= j
+    \end{cases} $$
+
+\subsection{Singleton Matrix}
+
+A matrix which consists of \textbf{only one element}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{1 \cross 1} $$
+
+\subsection{Triangular Matrix}
+
+\begin{enumerate}
+    \item \textbf{Upper Triangular Matrix}
+
+          A \textbf{Square Matrix} in which \textbf{all elements below principal diagonal are zero}.
+
+          $$A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{n \cross n}, a_{ij}=0 \hspace{2mm} \forall \hspace{2mm} i >j $$
+
+    \item \textbf{Lower Triangular Matrix}
+
+          A \textbf{Square Matrix} in which \textbf{all elements above principal diagonal are zero}.
+          $$A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{n \cross n}, a_{ij}=0 \hspace{2mm} \forall \hspace{2mm} i<j $$
+\end{enumerate}
+
+\subsection{Horizontal Matrix}
+
+A matrix in which \textbf{no. of rows is less than no. of columns}
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, m <n  $$
+
+\subsection{Vertical Matrix}
+
+A matrix in which \textbf{no. of rows is greater than no. of columns}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, m>n $$
+
+\subsection{Null or Zero Matrix}
+
+A matrix in which \textbf{all elements equal zero.}
+
+$$O={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, a_{ij}=0 \hspace{2mm} \forall \hspace{2mm} i,j $$
+
+\subsection{Sub-Matrix}
+
+A matrix which is obtained from a given matrix \textbf{by deleting any no. of rows and no. of columns}.
+
+e.g. ${\begin{bmatrix}
+                3  & 4 \\
+                -2 & 5
+            \end{bmatrix}}_{2 \cross 2}$ is a sub-matrix of ${\begin{bmatrix}
+                8 & 9  & 5 \\
+                2 & 3  & 4 \\
+                3 & -2 & 5
+            \end{bmatrix}}_{3 \cross 3} $
+
+\subsection{Comparable Matrices}
+
+Two Matrices $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n} $ and $B= {\begin{bmatrix}
+        b_{ij}
+    \end{bmatrix}}_{p \cross q} $ are \textbf{comparable}, \\if \textbf{$m=p \wedge n = q$}
+
+
+\subsection{Idempotent Matrix}
+
+A square matrix whose square equals itself.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, A^2=A $$
+
+\begin{itemize}
+
+    \item   For a Idempotent Matrix, $A^n=A \hfill \forall \hspace{2mm} n \in \mathbb{Z^+}$
+\end{itemize}
+\subsection{Periodic Matrix}
+
+A square matrix $A$ is called periodic,
+
+If $$A^{k+1}=A, k \in \mathbb{Z^+} $$
+\begin{itemize}
+
+    \item  The least value of all such $k$ is called the period of matrix $A$.
+
+    \item   Period of an Idempotent Matrix is $1$.
+\end{itemize}
+\subsection{Nilpotent Matrix}
+
+A square matrix $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n} $ which
+
+satisfies $$A^k=O, A^{k-1} \not=O $$
+
+\subsection{Involutory Matrix}
+
+A square matrix $A$ which
+
+satisfies, $$A^2=I$$
+\begin{itemize}
+
+    \item   For Involutory Matrix, $A=A^{-1}$
+\end{itemize}
+\subsection{Symmetric Matrix}
+
+A square matrix $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n} $ in which $A=A^T$.
+\begin{itemize}
+
+
+    \item In a Symmetric Matrix, elements situated at equal distance from the diagonal are equal.
+    \item For any Square Matrix $A$ with $a_{ij} \in \mathbb{R}$, then $A+A^T$ is symmetric.
+    \item If $A$ is a Square Matrix, then $AA^T$ and $A^TA$ are symmetric matrices.
+    \item All positive integral powers of a symmetric matrix are symmetric.
+
+          $$\textit{If } A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{n \cross n}, a_{ij}=a_{ji} \textit{ Then } A^n={\begin{bmatrix}
+                  \alpha_{ij}
+              \end{bmatrix}}_{n \cross n}, \alpha_{ij}=\alpha_{ji} $$
+    \item If $A$ be a symmetric matrix and $B$ be a square matrix of order that of $A$, then $-A, kA, A^T, A^{-1},A^n, B^TAB $ are also symmetric. $n \in \mathbb{N}, k \in \mathbb{C} $
+    \item Let $A$ and $B$ be two symmetric matrices of same order, then
+
+          \begin{enumerate}[a.]
+              \item $A \pm B, AB+BA $ are symmetric.
+              \item $AB-BA$ is skew-symmetric.
+              \item $AB$ is symmetric iff, $AB=BA$
+          \end{enumerate}
+\end{itemize}
+
+\subsection{Skew-Symmetric Matrix}
+
+A Square Matrix $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n} $ in which $a_{ij}=-a_{ji} \hspace{2mm} \forall \hspace{2mm} i,j$
+\begin{itemize}
+    \item In a Skew-Symmetric Matrix all diagonal entries are \textbf{zero.}
+    \item In a Skew-Symmetric Matrix, the elements situated at equal distance from the diagonal are equal in magnitude but opposite in sign.
+    \item If $A$ is a Skew-Symmetric Matrix, then $Tr(A)=0$
+    \item For any Square Matrix $A$ with $a_{ij}\in \mathbb{R} $, then $A-A^T$ is a Skew-Symmetric Matrix.
+    \item Every Square Matrix can be uniquely expressed as the sum of a symmetric and skew-symmetric matrix.
+
+          $$A=\dfrac{1}{2} \left(A+A^T\right)+\dfrac{1}{2} \left(A-A^T\right)$$
+    \item All positive odd integral powers of a skew-symmetric matrix are skew-symmetric.
+          $$\textit{ If } A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{m \cross m}, a_{ij}=-a_{ji} \textit{ Then } A^{2n+1}={\begin{bmatrix}
+                          \alpha_{ij}
+                      \end{bmatrix}}_{m \cross m}, \alpha_{ij}=-\alpha_{ji}, n\in \mathbb{N} $$
+    \item All positive even integral powers of a skew-symmetric matrix are symmetric.
+          $$\textit{ If } A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{m \cross m}, a_{ij}=-a_{ji} \textit{ Then } A^{2n}={\begin{bmatrix}
+                          \alpha_{ij}
+                      \end{bmatrix}}_{m \cross m}, \alpha_{ij}=\alpha_{ji}, n \in \mathbb{N}  $$
+    \item If $A$ be a skew-symmetric matrix and $B$ be a square matrix of order that of $A$ then, $kA, B^TAB$ are also skew-symmetric.
+    \item Let $A$ and $B$ be two skew-symmetric matrices of same order, then
+          \begin{enumerate}[a.]
+              \item $A \pm B, AB-BA $ are skew-symmetric.
+              \item $AB+BA$ is symmetric
+          \end{enumerate}
+    \item Let $A$ be skew-symmetric matrix and $C$ be column vector, \\then $C^TAC=O$
+\end{itemize}
+
+\subsection{Orthogonal Matrix}
+
+A square matrix whose transpose is its inverse.
+
+$$AA^{T}=I$$
+\begin{itemize}
+    \item $A^{-1}=A^T $
+    \item Let $A$ and $B$ be Orthogonal, then $AB$ is also Orthogonal.
+    \item If $A$ is orthogonal, then $A^{-1}, A^T $ are also Orthogonal.
+\end{itemize}
+
+\subsection{Hermitian Matrix}
+A square matrix which is equal to its conjugate transpose matrix.
+
+$$\textit{ If } A_{n \cross n}=A_{n \cross n}^\theta \hspace{2mm} \vee A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, a_{ij}=\overline{a_{ji}}, \textit{ Then A is Hermitian } $$
+
+\begin{itemize}
+    \item The diagonal entries of a Hermitian Matrix are $\mathbb{R}$
+    \item Elements situated at equal distance from diagonal are complex conjugate of each other.
+    \item Let $A$ be any square matrix, then $A+A^\theta$ is a Hermitian Matrix.
+    \item If $A$ be a square matrix, then $AA^\theta, A^\theta A$ are Hermitian.
+    \item If $A$ is Hermitian Matrix, then
+          \begin{enumerate}[a.]
+              \item $iA$ is Skew-Hermitian Matrix. $\hfill i^2=-1$
+              \item $\overline{A}$ is also a Hermitian Matrix.
+              \item $kA$ is Hermitian Matrix. $\hfill k \in \mathbb{R} $
+              \item If $A, B$ are Hermitian Matrices of same order, then
+                    \begin{enumerate}[a.]
+                        \item $k_{1}A+k_{2}B $ is also Hermitian. $\hfill k_{1}, k_{2} \in \mathbb{R} $
+                        \item $AB$ is also Hermitian if $AB=BA$
+                        \item $AB+BA$ is Hermitian.
+                        \item $AB-BA$ is Skew-Hermitian.
+                    \end{enumerate}
+          \end{enumerate}
+\end{itemize}
+
+\subsection{Skew-Hermitian Matrix}
+A square matrix which is equal to negative of its conjugate transpose matrix.
+
+$$\textit{ If } A_{n \cross n}=-A_{n \cross n}^\theta \hspace{2mm} \vee \hspace{2mm} A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, a_{ij}=-\overline{a_{ji}}, \textit{ Then A is Skew-Hermitian } $$
+\begin{itemize}
+    \item All diagonal entries of a Skew-Hermitian Matrix are purely imaginary or zero.
+    \item In a Skew-Hermitian Matrix elements situated at equal distance from the diagonal only differ in the sign of real part.
+    \item Let $A$ be any square matrix, then $A-A^\theta$ is a Skew-Hermitian Matrix.
+    \item Every square matrix can be uniquely expressed as the sum of a Hermitian and a Skew-Hermitian Matrix.
+          $$A_{n \cross n}=\dfrac{1}{2}\left(A+A^\theta\right)+\dfrac{1}{2}\left(A-A^\theta\right) $$
+    \item If $A$ is a Skew-Hermitian Matrix, then
+          \begin{enumerate}[a.]
+              \item $iA$ is a Hermitian Matrix. $\hfill i^2=-1$
+              \item $\overline{A}$ is also Skew-Hermitian.
+              \item $kA$ is Skew-Hermitian. $\hfill k \in \mathbb{R}$
+          \end{enumerate}
+    \item If $A, B$ are two Skew-Hermitian Matrices of same order, then $k_{1}A +k_{2}B $ is also Skew-Hermitian.
+\end{itemize}
+
+\subsection{Unitary Matrix}
+A Square Matrix whose inverse is its conjugate transpose matrix.
+$$AA^\theta=I \implies A^{-1}=A^\theta $$
+\begin{itemize}
+    \item If $A $ and $B $ are unitary, then $AB$ is also unitary.
+    \item If $A$ is unitary, then $A^{-1}, A^T $ are also unitary.
+\end{itemize}
+
+\section{Trace of a Matrix}
+The \textbf{sum of all diagonal entries} of a \textbf{square matrix} is called its \textbf{Trace}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, Tr(A)=\displaystyle \sum _{i=1}^{n} a_{ii} $$
+
+\subsection{Properties of Trace of a Matrix}
+
+Let $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, B={\begin{bmatrix}
+                b_{ij}
+            \end{bmatrix}}_{n \cross n}, k \in \mathbb{C} $
+\begin{enumerate}[i.]
+    \item $Tr(kA)=k \cdot Tl(A) $
+    \item $Tr(A \pm B)= Tr(A) \pm Tr(B)$
+    \item $Tr(AB)=Tr(BA)$
+    \item $Tr(A)=Tr(A')$
+    \item $Tr(I_{n})=n$
+    \item $Tr(AB) \not= Tr(A) \cdot Tr(B)$
+    \item $Tr(A)=Tr(CAC^{-1}) C$ is a non-singular square matrix of order $n$.
+\end{enumerate}
+
+\section{Determinant of a Square Matrix}
+Let $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n} $. The determinant formed by the elements of $A$ is said to be the determinant of matrix $A= det(A)= |A|$
+
+\subsection*{Important Points}
+\begin{enumerate}[a.]
+    \item $det\left(\displaystyle\prod_{r=1}^{n} A_{r}\right)=\displaystyle\prod_{r=1}^{n} det(A_{r}) $
+    \item $det(kA)=k^n det(A) \hfill k \in \mathbb{C}, n = \text{order of $A$} $
+    \item $det(A) \text{ exists} \iff A$ is a square matrix.
+    \item $det(A)=det(A^T) $
+    \item If $A$ is Orthogonal Matrix, then $det(A)=\pm 1 $
+    \item If $A$ is Skew-Symmetric Matrix of odd order, then $det(A)=0$
+    \item If $A$ is Skew-Symmetric Matrix of even order, then $det(A)$ is a perfect square.
+    \item If $A=diag(a_{1}, a_{2}, \ldots , a_{n})$, then $det(A)=\displaystyle\prod_{r=1}^{n}a_{r}$
+    \item $det(A^{-1})=\dfrac{1}{det(A)}$
+\end{enumerate}
+
+\subsection*{Singular (Invertible) and\\ non-singular (Non-Invertible) Matrix}
+
+If for $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n}, det(A)=0 $ then $A$ is called a \textbf{}{singular} matrix. \\If $det(A) \not= 0$ then it is called \textbf{non-singular} matrix.
+
+\section{Equal Matrices}
+Two matrices are equal, iff
+\begin{enumerate}[i.]
+    \item They are of same order.
+    \item The elements in the corresponding positions of the two matrices are equal.
+
+          Let $A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{m \cross n} $ and $B={\begin{bmatrix}
+                  b_{ij}
+              \end{bmatrix}}_{p \cross q} $
+
+          Now, $A=B$ iff, $m=p, n=q, a_{ij}=b_{ij} \hspace{2mm} \forall \hspace{2mm} i,j$
+\end{enumerate}
+
+\section{Algebra of Matrices}
+
+\subsection{Addition}
+If $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n} $ and $B={\begin{bmatrix}
+        b_{ij}
+    \end{bmatrix}}_{m \cross n} $
+\newline \newline
+Then, $$A+B= {\begin{bmatrix}
+        a_{ij}+b_{ij}
+    \end{bmatrix}}_{m \cross n} $$
+
+\textbf{Properties of Matrix Addition}
+
+\begin{enumerate}[1.]
+    \item Addition of Matrices is \textbf{commutative}.
+          $$A+B= B+A$$
+
+    \item Addition of Matrices is \textbf{associative}.
+          $$(A+B)+C=A+(B+C)$$
+
+    \item Additive Identity is $O$ (Null Matrix)
+
+          $$A+O=A$$
+
+    \item Additive Inverse is $-A$
+
+          $$A+ (-A)= O$$
+
+    \item Cancellation law
+
+          $A+B=A+C \implies B=C$
+\end{enumerate}
+\subsection{Multiplication}
+
+\subsubsection{Scalar Multiplication}
+The  Matrix obtained by \textbf{multiplying every element of a matrix with a scalar} is called the scalar multiple of that matrix.
+
+Let $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, k \in \mathbb{C}$
+
+Now, $$kA={\begin{bmatrix}
+        k \cdot a_{ij}
+    \end{bmatrix}}_{m \cross n} $$
+
+\subsubsection{Matrix Multiplication}
+
+\textbf{Conformable for Multiplication}
+
+Two matrices $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, B={\begin{bmatrix}
+                b_{ij}
+            \end{bmatrix}}_{p \cross q} $ are conformable for the product $AB$, if the no. of columns in the pre-factor ($A$) is equal to the no. of rows in the post-factor ($B$)
+
+$$AB \textit{ exists iff } n=p $$
+
+\textbf{Multiplication of Matrices}
+
+
+Let $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, B={\begin{bmatrix}
+                b_{ij}
+            \end{bmatrix}}_{n \cross q}, C= {\begin{bmatrix}
+                c_{ij}
+            \end{bmatrix}}_{m \cross q} \textit{ s.t. } AB=C $
+
+$\therefore c_{ij}=\displaystyle\sum_{r=1}^{n} a_{ir} \cdot b_{rj} \hfill \textit{Row by Column Multiplication}$
+
+\subsubsection{Properties of Matrix Multiplication}
+\begin{enumerate}[i.]
+    \item Matrix Multiplication is not commutative.
+          $$AB \not= BA$$
+          \begin{itemize}
+              \item   If $AB=BA$ then matrices $A, B$ are said to commute.
+
+              \item    If $AB=-BA$ then matrices $A, B$ are said to anti-commute.
+
+              \item  Diagonal Matrices of same order always commute.
+          \end{itemize}
+    \item Matrix Multiplication is associative.
+          $$A(BC)=(AB)C$$
+
+    \item If $A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{m \cross n} $, then $I_{m} \, A=A=AI_{n} $
+
+    \item Matrix Multiplication is distributive.
+
+          $$A(B+C)=AB+AC$$
+          Note: $A(B+C) \not= AB+CA$
+
+    \item If product of two matrices is a null matrix then it is not necessary that one of the matrices is also a null matrix.
+
+          $$AB=O \notimplies A=O \vee B=O$$
+
+          If $AB=O$ then $A, B$ are divisors of $O$
+
+          $AB=O \implies det(AB)=0 \implies det(A) \cdot det(B)=0$
+
+    \item $AO=O$
+
+    \item $I^m=I \hfill \forall \hspace{2mm} m \in \mathbb{Z^+}$
+
+    \item if $A={\begin{bmatrix}
+                  a_{ij}
+              \end{bmatrix}}_{n \cross n} $ \\
+
+          then $\underbrace{A \cdot A \cdot A \ldots A }_{m \text{ times}}=A^m \hfill \forall \hspace{2mm} m \in \mathbb{Z^+}$
+\end{enumerate}
+
+\section{Pre-Multiplication and Post-Multiplication of Matrices}
+The Matrix $AB$ is the matrix $B$ \textbf{pre-multiplied} by $A$ and the matrix $BA$ is the matrix B \textbf{post-multiplied} by $A$.
+
+\section{Transpose of a Matrix}
+
+The matrix obtained by \textbf{interchanging rows and columns}.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, A^T={\begin{bmatrix}
+        a_{ji}
+    \end{bmatrix}}_{n \cross m} $$
+
+\begin{itemize}
+    \item $A^T=A'=A^t=$ Transpose of Matrix $A$
+\end{itemize}
+\subsection{Properties of Transpose Matrices}
+
+\begin{enumerate}[i.]
+    \item $(A^T)^T=A $
+    \item $(A\pm B)^T=A^T \pm B^T $
+    \item $(kA)^T=k \cdot A^T $
+    \item $(AB)^T=B^TA^T $, In General, $\left(\displaystyle\prod_{r=1}^{n} A_{r}\right)^T=\displaystyle\prod_{r=1}^{n} A^T_{n+1-r} $
+    \item $I^T=I $
+\end{enumerate}
+\section{Complex Conjugate of a Matrix}
+The Matrix obtained by replacing each element by its complex conjugate.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, \overline{A}={\begin{bmatrix}
+                \overline{a_{ij}}
+            \end{bmatrix}}_{m \cross n} $$
+
+\begin{itemize}
+    \item If all elements are $\mathbb{R} $, then $A=\overline{A}$
+    \item $\overline{\overline{A}}=A$
+    \item $\overline{A+B}=\overline{A}+\overline{B}$
+    \item $\overline{kA}=\overline{k} \cdot \overline{A} \hfill k \in \mathbb{C} $
+    \item $\overline{AB}=\overline{A} \, \overline{B} $
+\end{itemize}
+
+\section{Conjugate Transpose of a Matrix}
+The complex conjugate of the transpose of a matrix.
+
+$$A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, A^{\theta} =\overline{A^T}={\begin{bmatrix}
+        \overline{a_{ji}}
+    \end{bmatrix}}_{n \cross m} $$
+
+If $A$ and $B$ are two matrices of same order, then
+\begin{enumerate}[i.]
+    \item $\overline{A^T}=\left(\overline{A}\right)^T$
+    \item $\left(A^\theta\right)^\theta=A$
+    \item $\left(A+B\right)^\theta=A^\theta+B^\theta $
+    \item $\left(kA\right)^\theta=\overline{k} A^\theta \hfill k \in \mathbb{C} $
+    \item $\left(AB\right)^\theta=B^\theta A^\thetitle $
+\end{enumerate}
+
+\section{Adjoint of A Matrix}
+The Transpose of Matrix formed by its co-factors is its Adjoint.
+\newline \newline
+Let $A={\begin{bmatrix}
+        a_{ij}
+    \end{bmatrix}}_{n \cross n} $
+\newline \newline
+then $$Adj(A)={\begin{bmatrix}
+        C_{ji}
+    \end{bmatrix}}_{n \cross n} $$
+\end{document}
