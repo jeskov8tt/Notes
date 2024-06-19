@@ -577,13 +577,65 @@ If $A$ and $B$ are two matrices of same order, then
 \end{enumerate}
 
 \section{Adjoint of A Matrix}
-The Transpose of Matrix formed by its co-factors is its Adjoint.
+The Transpose of Square Matrix formed by its co-factors is its Adjoint.
 \newline \newline
 Let $A={\begin{bmatrix}
         a_{ij}
     \end{bmatrix}}_{n \cross n} $
 \newline \newline
-then $$Adj(A)={\begin{bmatrix}
+then $$adj(A)={\begin{bmatrix}
         C_{ji}
     \end{bmatrix}}_{n \cross n} $$
+
+
+\subsection{Properties of Adjoint Matrix}
+\begin{enumerate}[i.]
+    \item $A \cdot adj(A)= adj(A) \cdot A= det(A) I $
+    \item $det(adj(A))=\left(det(A)\right)^{n-1}$
+    \item $det(\underbrace{adj(adj(adj( \ldots \hspace{1cm})))}_{m \text{ times } adj})=det(A)^{\left(n-1\right)^{m}}$
+    \item $\left(adj(A)\right)^T=adj(A^T)$
+    \item $adj(adj(A))=(det(A))^{n-2}A$
+    \item $adj(kA)=k^{n-1}adj(A) \hfill k \in \mathbb{C}$
+    \item $adj(A^m)=(adj(A))^m \hfill m \in \mathbb{N}$
+    \item $det(A \cdot adj(A)+kI_{n})=\left(det(A)+k\right)^n$
+    \item Adjoint of a Diagonal Matrix is a Diagonal Matrix.
+
+          If $A= {\begin{bmatrix}
+                  a & 0 & 0 \\
+                  0 & b & 0 \\
+                  0 & 0 & c
+              \end{bmatrix}} $, then $adj(A)=\begin{bmatrix}
+                  bc & 0  & 0  \\
+                  0  & ca & 0  \\
+                  0  & 0  & ab
+              \end{bmatrix}$
+    \item $adj(I_{n})=I_{n}$
+\end{enumerate}
+
+\section{Inverse of a Matrix}
+A square matrix of is said to be Invertible, iff its determinant is non zero.
+$$det(A)\not=0$$
+$$A^{-1}=\dfrac{adj(A)}{det(A)}$$
+
+\subsection{Properties of Inverse Matrix}
+\begin{enumerate}[i.]
+    \item Every invertible matrix possesses a unique inverse.
+    \item $(AB)^{-1}=B^{-1}A^{-1}$
+    \item $(A^T)^{-1}=(A^{-1})^T$
+    \item $(A^k)^{-1}=(A^{-1})^k=A^{-k} \hfill k \in \mathbb{N}$
+    \item $(A^{-1})^{-1}=A$
+    \item $I^{-1}=I$
+    \item $det(A^{-1})=\dfrac{1}{det(A)}$
+    \item Inverse of a digonal matrix is a digonal matrix.
+
+          If $A=\begin{bmatrix}
+                  a & 0 & 0 \\
+                  0 & b & 0 \\
+                  0 & 0 & c
+              \end{bmatrix}$ then $A^{-1}=\begin{bmatrix}
+                  \dfrac{1}{a} & 0      & 0 \\
+                  0            & \dfrac{1}{b} & 0 \\
+                  0 & 0 & \dfrac{1}{c}
+              \end{bmatrix}$
+\end{enumerate}
 \end{document}
