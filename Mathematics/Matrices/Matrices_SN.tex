@@ -73,7 +73,7 @@ A \textbf{square matrix} in which \textbf{all non-diagonal entries are zero}.
 
 $$A={\begin{bmatrix}
         a_{ij}
-    \end{bmatrix}}_{n \cross n}, a_{ij}=0 \hspace{2mm} \forall \hspace{2mm} i \not= j, a_{ij} \not= 0 \hspace{2mm} \forall \hspace{2mm} i=j$$
+    \end{bmatrix}}_{n \cross n}, a_{ij}=0 \hspace{2mm} \forall \hspace{2mm} i \not= j$$
 
 \subsection{Scalar Matrix}
 
@@ -337,6 +337,15 @@ $$AA^\theta=I \implies A^{-1}=A^\theta $$
 \begin{itemize}
     \item If $A $ and $B $ are unitary, then $AB$ is also unitary.
     \item If $A$ is unitary, then $A^{-1}, A^T $ are also unitary.
+\end{itemize}
+
+\subsection{Equivalent Matrices}
+Two matrices are said to be equivalent if one is obtained from the other by elementary operations.
+$$A \sim B, \textit{A is equivalent to B} $$
+
+\begin{itemize}
+    \item If $A \sim B \hspace{2mm} \exists \hspace{2mm}$ invertible matrices $P$ and $Q$ such that $B=PAQ$
+    \item Every invertible square matrix can be expressed as the product of elementary matrices.
 \end{itemize}
 
 \section{Trace of a Matrix}
@@ -633,9 +642,110 @@ $$A^{-1}=\dfrac{adj(A)}{det(A)}$$
                   0 & b & 0 \\
                   0 & 0 & c
               \end{bmatrix}$ then $A^{-1}=\begin{bmatrix}
-                  \dfrac{1}{a} & 0      & 0 \\
-                  0            & \dfrac{1}{b} & 0 \\
-                  0 & 0 & \dfrac{1}{c}
+                  \dfrac{1}{a} & 0            & 0            \\
+                  0            & \dfrac{1}{b} & 0            \\
+                  0            & 0            & \dfrac{1}{c}
               \end{bmatrix}$
+\end{enumerate}
+\section{Elementary Row Operations}
+\begin{enumerate}[i.]
+    \item The interchange of $i$th row and $j$th row.
+          $$R_{i} \leftrightarrow R_{j}$$
+    \item Multiplication of $i$th row by a non zero constant $k$.
+          $$R_{i} \rightarrow k\cdot R_{i}$$
+    \item Addition of $i$th row to the elements of $j$th row multiplied by a non zero constant $k$.
+          $$R_{i} \rightarrow R_{i}+ k \cdot R_{j}$$
+\end{enumerate}
+\section{Gauss Jordan Method for Computing Inverses}
+Let $A$ be an invertible matrix. To find inverse of a using Gauss Jordan Method,
+
+\begin{enumerate}[1.]
+    \item Create a matrix $G=\begin{bmatrix}
+                  A & | & I
+              \end{bmatrix}$
+    \item Now using elementary operations on $G$ transform $A$ to $I$.
+    \item In the process of trasforming $A$ to $I$, $I$ transforms to $A^{-1}$
+\end{enumerate}
+
+\section{Matrix Polynomial}
+$$f(A)=a_{n}A^n+a_{n-1}A^{n-1}+a_{n-2}A^{n-2}+ \ldots +a_{1}A+a_{0}I$$
+
+For $n \ge 2, A$ should be a square matrix.
+
+\begin{itemize}
+    \item If $det(A) \not= 0, a_{0}\not=0, a_{0}I+a_{1}A+a_{2}A^2+ \ldots + a_{n}A^n=O$,
+
+          then $$A^{-1}=\dfrac{1}{a_{0}}\left(
+              a_{1}I+a_{2}A+a_{3}A^2+ \ldots + a_{n}A^{n-1}
+              \right)$$
+\end{itemize}
+
+\section{Linear System of Equations}
+Consider,
+$$a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{3}+ \ldots + a_{1n}x_{n}=b_{1}$$
+$$a_{21}x_{1}+a_{22}x_{2}+a_{23}x_{3}+ \ldots + a_{2n}x_{n}=b_{2}$$
+$$a_{31}x_{1}+a_{32}x_{2}+a_{33}x_{3}+ \ldots + a_{3n}x_{n}=b_{3}$$
+$\hphantom{1cm} \hspace{2.6cm} \vdots \hspace{1.1cm} \vdots \hspace{1.1cm} \vdots \hspace{1.0cm} \ddots \hspace{0.6cm} \vdots \hspace{1.1cm} \vdots$
+$$a_{n1}x_{1}+a_{n2}x_{2}+a_{n3}x_{3}+ \ldots + a_{nn}x_{n}=b_{n}$$
+
+If $b_{i}=0,i\in \left\{x:x\le n, x \in \mathbb{N}\right\}$, then the above system is called Homogenous. \\If not then it is Non-Homogenous.
+
+In Matrix form,
+
+$$\begin{bmatrix}
+        a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\
+        a_{31} & a_{32} & a_{33} & \ldots & a_{3n} \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        a_{n1} & a_{n2} & a_{n3} & \ldots & a_{nn} \\
+    \end{bmatrix} \begin{bmatrix}
+        x_{1}  \\
+        x_{2}  \\
+        x_{3}  \\
+        \vdots \\
+        x_{n}  \\
+    \end{bmatrix}=\begin{bmatrix}
+        b_{1}  \\
+        b_{2}  \\
+        b_{3}  \\
+        \vdots \\
+        b_{n}  \\
+    \end{bmatrix}$$
+$$AX=B$$
+$$X=A^{-1}B=\dfrac{adj(A)B}{det(A)}$$
+\subsection{Types of Equations}
+\begin{enumerate}[I.]
+    \item If system is Non-Homogenous
+          \begin{enumerate}[i.]
+              \item If $det(A)\not=0$, then system possesses a unique solution.
+              \item If $det(A)=0, adj(A)B \not= O$, then system possesses no solution.
+              \item If $det(A)=0, adj(A)B=O$, then system possesses $\infty$ solutions.
+          \end{enumerate}
+    \item If system is Homogenous
+          \begin{enumerate}[i.]
+              \item If $det(A)\not=0$, then system possesses only one trivial solution.
+              \item If $det(A)=0$, then system possesses non-trivial solutions and $\infty$ solutions.
+              \item If no. of equations $<$ no. of unknowns, then it has non-trivial solution.
+          \end{enumerate}
+\end{enumerate}
+\section{Echelon Form of a Matrix}
+A matrix $A$ is said to be in echelon form, if
+\begin{enumerate}[i.]
+    \item The first non-zero element in each row is $1$.
+    \item Every non-zero row is $A$ preceds eveny zero row (If any).
+    \item The number of zeroes before the first non-zero element in 1st, 2nd, ... rows should be in increasing order.
+\end{enumerate}
+\section{Rank of a Matrix}
+Rank of a Matrix $A$, $\rho(A)=\textit{Number of non-zero rows in Echelon form of A}$
+\subsection{Properties of Rank of Matrices}
+Let $A={\begin{bmatrix}
+    a_{ij}
+\end{bmatrix}}_{m \cross n}, B={\begin{bmatrix}
+    b_{ij}
+\end{bmatrix}}_{m \cross n}$
+\begin{enumerate}[i.]
+    \item $\rho(A+B)\le \rho(A)+\rho(B)$
+    \item $\rho(AB)\le \rho(A) \wedge \rho(AB)\le\rho(B)$
+    \item $\rho(A)=\rho(A^T)$
 \end{enumerate}
 \end{document}
