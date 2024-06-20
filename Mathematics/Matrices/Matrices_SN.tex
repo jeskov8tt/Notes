@@ -739,13 +739,136 @@ A matrix $A$ is said to be in echelon form, if
 Rank of a Matrix $A$, $\rho(A)=\textit{Number of non-zero rows in Echelon form of A}$
 \subsection{Properties of Rank of Matrices}
 Let $A={\begin{bmatrix}
-    a_{ij}
-\end{bmatrix}}_{m \cross n}, B={\begin{bmatrix}
-    b_{ij}
-\end{bmatrix}}_{m \cross n}$
+        a_{ij}
+    \end{bmatrix}}_{m \cross n}, B={\begin{bmatrix}
+                b_{ij}
+            \end{bmatrix}}_{m \cross n}$
 \begin{enumerate}[i.]
     \item $\rho(A+B)\le \rho(A)+\rho(B)$
     \item $\rho(AB)\le \rho(A) \wedge \rho(AB)\le\rho(B)$
     \item $\rho(A)=\rho(A^T)$
 \end{enumerate}
+\section{Solutions to Linear System of Equations Using Rank Method}
+Consider,
+$$a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{3}+ \ldots + a_{1n}x_{n}=b_{1}$$
+$$a_{21}x_{1}+a_{22}x_{2}+a_{23}x_{3}+ \ldots + a_{2n}x_{n}=b_{2}$$
+$$a_{31}x_{1}+a_{32}x_{2}+a_{33}x_{3}+ \ldots + a_{3n}x_{n}=b_{3}$$
+$\hphantom{1cm} \hspace{2.6cm} \vdots \hspace{1.1cm} \vdots \hspace{1.1cm} \vdots \hspace{1.0cm} \ddots \hspace{0.6cm} \vdots \hspace{1.1cm} \vdots$
+$$a_{m1}x_{1}+a_{m2}x_{2}+a_{m3}x_{3}+ \ldots + a_{mn}x_{n}=b_{m}$$
+
+In Matrix form,
+
+$$\begin{bmatrix}
+        a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \ldots & a_{2n} \\
+        a_{31} & a_{32} & a_{33} & \ldots & a_{3n} \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        a_{m1} & a_{m2} & a_{m3} & \ldots & a_{mn} \\
+    \end{bmatrix} \begin{bmatrix}
+        x_{1}  \\
+        x_{2}  \\
+        x_{3}  \\
+        \vdots \\
+        x_{n}  \\
+    \end{bmatrix}=\begin{bmatrix}
+        b_{1}  \\
+        b_{2}  \\
+        b_{3}  \\
+        \vdots \\
+        b_{m}  \\
+    \end{bmatrix}$$
+$$AX=B$$
+
+Now, $$C=\begin{bmatrix}
+        A \hspace{2mm} B
+    \end{bmatrix}=\begin{bmatrix}
+        a_{11} & a_{12} & a_{13} & \ldots & a_{1n} & b_{1}  \\
+        a_{21} & a_{22} & a_{23} & \ldots & a_{2n} & b_{2}  \\
+        a_{31} & a_{32} & a_{33} & \ldots & a_{3n} & b_{3}  \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+        a_{m1} & a_{m2} & a_{m3} & \ldots & a_{mn} & bm     \\
+    \end{bmatrix}$$
+$C$ is called augmented matrix.
+
+\subsection{Types of Equations}
+\begin{enumerate}[I.]
+    \item Consistent System, If $\rho(A)=\rho(C)$
+          \begin{enumerate}[i.]
+              \item Unique Solution, If $\rho(A)=\rho(C)=n=\textit{no. of unknowns}$
+              \item $\infty$ Solutions, If $\rho(A)=\rho(C)=r<n$
+          \end{enumerate}
+    \item Inconsistent System, If $\rho(A)\not=\rho(C) \implies \textit{no solution}$
+\end{enumerate}
+
+\section{Linear Transformations}
+\subsection{Reflection Matrices}
+\subsubsection{Reflection through axis of $x$}
+The Matrix $\begin{bmatrix}
+        1 & 0  \\
+        0 & -1
+    \end{bmatrix}$ describes the reflection of any point $P(x,y)$ through the\\ axis of $x$.
+
+\subsubsection{Reflection through the axis of $y$}
+The Matrix $\begin{bmatrix}
+        -1 & 0 \\
+        0  & 1
+    \end{bmatrix}$ describes the reflection of any point $P(x,y)$ through the\\ axis of $y$.
+
+\subsubsection{Reflection through the origin}
+The Matrix $\begin{bmatrix}
+        -1 & 0  \\
+        0  & -1
+    \end{bmatrix}$ describes the reflection of any point $P(x,y)$ through the \\ origin.
+
+\subsubsection{Reflection through line $y=x$}
+The matrix $\begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{bmatrix}$ describes the reflection of any point $P(x,y)$ through the line $y=x$
+
+\subsubsection{Reflection through the line $y=x\tan \theta$}
+The matrix $\begin{bmatrix}
+        \cos 2 \theta & \sin 2 \theta  \\
+        \sin 2 \theta & -\cos 2 \theta
+    \end{bmatrix}$ describes the reflection of any point $P(x,y)$ through the line $y=x\tan \theta $
+
+\subsubsection{Rotation Through Angle $\theta$}
+The Matrix $\begin{bmatrix}
+        \cos \theta & -\sin \theta \\
+        \sin \theta & \cos \theta
+    \end{bmatrix}$ describes a rotation of a vector through an angle $\theta$.
+
+\section{Eigen Vectors and Eigen Values}
+Let $\nu$ be any non-zero vector satisfying,
+
+$$A\nu=\lambda \nu$$
+
+This scalar $\lambda$ is called the Eigen Value (Characteristic Root) and the vector $\nu$ is the Eigen vector (Characteristic Vector).
+\subsection{Important Properties of Eigen Values}
+\begin{enumerate}[i.]
+    \item Any square matrix $A$ and its transpose $A^T$ have the same Eigen Values.
+    \item The sum of Eigen Values of a matrix is equal to its trace.
+    \item The product of Eigen Values is of a matrix $A$ is equal to its determinant.
+    \item If $\lambda_{i}$ are the Eigen Value of $A$, then the Eigen Values of
+          \begin{enumerate}[a.]
+             \item $kA$ are $k\lambda_{i}$
+             \item $A^m$ are ${\lambda_{i}}^m$
+             \item $A^{-1}$ are $\lambda_{i}^{-1}$
+          \end{enumerate}
+    \item All Eigen Values of a real symmetric matrix are $\mathbb{R}$ and the eigen vectors corresponding to tow distinct eigen values are orthogonal.
+    \item All Eigen Values of a real skew-symmetric matrix are purely imaginary or zero. 
+    \item An odd order skew-symmetric matrix is singular and hence has zero as an Eigen value.
+\end{enumerate}
+\section{Characteristic Equation}
+$$det(A-\lambda I)=0$$
+is called characteristic equation of matrix $A_{n \cross n}$.
+
+The adove equation reduces to a $n$th degree polynomial equation in $\lambda$.
+
+\section{Cayley Hamilton Theorem}
+Every square matrix $A$ satisfies its characteristic equation $det(A-\lambda I)=0$
+
+$$a_{0}+a_{1}\lambda+\ldots a_{n}\lambda^n=0$$
+By Cayley Hamilton Theorem, $\lambda \to A$
+$$a_{0}I+a_{1}A+a_{2}A^2+\ldots+a_{n}A^n=O$$
 \end{document}
