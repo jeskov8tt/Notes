@@ -79,6 +79,9 @@ where $C$ is the constant of Integration
     \item $\displaystyle\int \dfrac{dx}{\sqrt{x^2-1}}=\ln \abs{x+\sqrt{x^2-1}}+C$
     \item $\displaystyle\int \sqrt{1-x^2} \, dx=\dfrac{1}{2}x\sqrt{1-x^2}+\dfrac{1}{2} \sin^{-1} x +C $
     \item $\displaystyle\int \sqrt{x^2-1} \, dx= \dfrac{1}{2}x\sqrt{x^2-1}-\dfrac{1}{2}\ln \abs{x+\sqrt{x^2-1}}+C $
+    \item $\displaystyle\int \sqrt{x^2+1} \, dx=\dfrac{1}{2}x\sqrt{x^2+1}+\dfrac{1}{2}\ln \abs{x+\sqrt{x^2+1}}+C$
+    \item $\displaystyle\int \dfrac{x^2+1}{x^4+1} \, dx=\dfrac{1}{\sqrt{2}}\tan^{-1}\left(\dfrac{x-\sfrac{1}{x}}{\sqrt{2}}\right)+C$
+    \item $\displaystyle\int \dfrac{x^2-1}{x^4+1} \, dx=\dfrac{1}{2\sqrt{2}}\ln \abs{\dfrac{x+\sfrac{1}{x}- \sqrt{2}}{x+\sfrac{1}{x}+\sqrt{2}}}+C$
 
 \end{enumerate}
 \textbf{Important Results}
@@ -109,9 +112,7 @@ The transformed integral can be integrated using previous methods.
 \subsection{Integrals of form}
 $$\int \dfrac{px+q}{ax^2+bx+c} \, dx, \int \dfrac{px+q}{\sqrt{ax^2+bx+c}} \, dx, \int \left(px+q\right)\sqrt{ax^2+bx+c} \, dx $$
 $$px+q=\lambda \dv{x}(ax^2+bx+c) +\mu$$
-Now, after finding $\lambda
-    , \mu$, \\For the 1st part, use $\textit{u sub}$,\\ Let $$u= ax^2+bx+c$$
-
+Now, after finding $\lambda,  \mu$, \\For the 1st part, use $\textit{u sub}$,\\ Let $$u= ax^2+bx+c$$
 2nd part of the integral can be integrated using previous methods.
 \subsection{Integrals of form $$\int \dfrac{K(x)}{ax^2+bx+c} \, dx$$ where $deg(K(x))\ge2$}
 
@@ -122,9 +123,9 @@ can be integrated using previous methods.
 
 \subsection{Integrals of form}
 $$\int \dfrac{ax^2+bx+c}{px^2+qx+r} \, dx, \int \dfrac{ax^2+bx+c}{\sqrt{px^2+qx+r}} \, dx, \int \left(ax^2+bx+c\right)\sqrt{px^2+qx+r} \, dx$$
-
-$$\textit{on hold}$$
 $$ax^2+bx+c= \lambda \left(px^2+qx+r\right)+\mu \dv{x}(px^2+qx+r)+\gamma$$
+For $1$st part use Integration by Parts, 2nd and 3rd part can be integrated using previous methods.
+
 \subsection{Trig. Integrals}
 \subsubsection{Integrals of form}
 $$\int \dfrac{dx}{a \cos^2 x+b\sin ^2 x}, \int \dfrac{dx}{a+b \sin^2 x}, \int \dfrac{dx}{a+b\cos^2 x}$$
@@ -173,7 +174,7 @@ $$\int uv \, dx = u \int v \, dx - \int \left(u' \int v \, dx\right) \, dx$$
 
 $u$ is the function which has to be differentiated ($D$), $v$ is the function which has to be integrated ($I$)
 
-\subsection{Integral of form }
+\subsection{Integrals of form }
 $$I=\int e^{g(x)} \left(f(x)g'(x)+f'(x)\right) \, dx$$
 $I=e^{g(x)} \cdot f(x) +C$
 
@@ -182,11 +183,11 @@ $$S=\int e^{ax} \sin bx \, dx, C = \int e^{ax} \cos bx \, dx$$
 
 $S=\dfrac{e^{ax}}{a^2+b^2}\left(a \sin bx -b \cos bx\right)+C_{0}, C=\dfrac{e^{ax}}{a^2+b^2}\left(a \cos bx + b \sin bx\right) + C_{00}$
 
-\section{Partial Fraction Decomposition}
+\subsection{Integration by Partial Fraction Decomposition}
 Let $f(x)=\displaystyle\sum_{i=0}^{n}a_{i}x^i, g(x)=\displaystyle\sum_{i=0}^{m} b_{i}x^i$.
 
 We define a rational function $h(x)=\dfrac{f(x)}{g(x)}$, \\ $h(x)$ is $\begin{cases}
-        \textit{Proper Rational Funciton}   & m>n     \\
+        \textit{Proper Rational Function}   & m>n     \\
         \textit{Improper Rational Function} & m \le n
     \end{cases}$
 
@@ -195,20 +196,20 @@ If $h(x)$ is Improper, we make it Proper by polynomial long division, i.e. $$h(x
 Clearly, $\dfrac{r(x)}{g(x)}$ is Proper.
 
 
-Assuming, $h(x)$ is proper,
-\subsection{$g(x)$ is the product of non-repeating linear factors}
-Let $$g(x)=L_{1}(x) \cdot L_{2}(x) \cdot  \ldots \cdot L_{m}(x)$$ where $L_{i}(x)$ are linear functions.
+Now, assuming $h(x)$ is Proper,
+\subsubsection{$g(x)$ is the product of non-repeating linear factors}
+Let $$g(x)=L_{1}(x) \cdot L_{2}(x) \cdot  \ldots \cdot L_{m}(x)$$ where $L_{i}(x)$ are linear functions.\\
 Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
 $$\dfrac{f(x)}{g(x)}=\dfrac{A_{1}}{L_{1}}+\dfrac{A_{2}}{L_{2}(x)}+ \ldots + \dfrac{A_{m}}{L_{m}(x)}$$
 where, $A_{i} \in \mathbb{R}$ constants.
 
-\subsection{$g(x)$ is the product of non-repeating linear factors,\\ but a particular factor is repeated $k$ times}
+\subsubsection{$g(x)$ is the product of non-repeating linear factors,\\ but a particular factor is repeated $k$ times}
 Let $$g(x)=L_{1}^k(x) \cdot L_{2}(x) \cdot \ldots \cdot L_{\eta}(x)$$
-Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
+\\Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
 
 $$\dfrac{f(x)}{g(x)}=\dfrac{A_{1}}{L_{1}(x)}+\dfrac{A_{2}}{L_{1}^2(x)}+\dfrac{A_{3}}{L_{1}^3(x)}+\ldots + \dfrac{A_{k}}{L_{1}^k(x)}+\dfrac{B_{2}}{L_{2}(x)} \ldots +\dfrac{B_{\eta}}{L_{\eta}(x)}$$
 
-\subsection{$g(x)$ contains some non-repeating linear as well as quadratic factors}
+\subsubsection{$g(x)$ contains some non-repeating linear as well as quadratic factors}
 Let $$g(x)=\prod_{i} L_{i}(x) \cdot \prod_{j} Q_{j}(x)$$
 where, $Q_{j}(x)$ are quadratic factors.
 
@@ -216,11 +217,99 @@ Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
 
 $$\dfrac{f(x)}{g(x)}=\nsum[1.4]_{i} \dfrac{A_{i}}{L_{i}(x)}+ \nsum[1.4]_{j} \dfrac{xB_{j} +C_{j}}{Q_{j}(x)}$$
 
-\subsection{$g(x)$ contains some non-repeating linear and repeating quadratic factors}
+\subsubsection{$g(x)$ contains some non-repeating linear and repeating quadratic factors}
 Let $$g(x)=\prod_{i} L_{i}(x) \prod_{j} Q_{j} (x) \prod_{\omega} Q_{\omega}^k (x)$$
 
-where, $Q_{omega}^k(x)$ are repeating quadratic factors.
+Where, $Q_{\omega}^k(x)$ are repeating quadratic factors.\\
 Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
 
 $$\dfrac{f(x)}{g(x)}=\nsum[1.4]_{i} \dfrac{A_{i}}{L_{i}(x)}+ \nsum[1.4]_{j} \dfrac{x B_{j}+ C_{j}}{Q_{j}(x)}+\nsum[2]_{\omega} \nsum[1.4]_{r} \dfrac{xD_{r}+E_{r}}{Q_{\omega}^r (x)}$$
+
+\subsection{Integrals of form}
+
+\subsubsection{$$I=\displaystyle\int f\left(x+\dfrac{1}{x}\right)\left(1-\dfrac{1}{x^2}\right) \, dx$$}
+Let, $u=x+\dfrac{1}{x} \implies du = \left(1-\dfrac{1}{x^2}\right) \, dx$
+\\
+Now, $I=\displaystyle\int f(u) \, du$
+
+\subsubsection{Integrals of form $$\displaystyle\int \dfrac{x^2+1}{x^4+kx^2+1} \, dx$$}
+
+Divide numerator and denominator by $x^2$
+\\
+Now, the transformed integral can be integrated using previous methods.
+
+\subsection{Integration of Special Irrational Functions}
+\subsubsection{Integrals of form }
+$$\displaystyle\int \dfrac{1}{(ax+b)\sqrt{cx+d}} \, dx$$
+Using $\textit{u-sub}$,
+\\
+Let $$u^2=cx+d$$
+Now, the transformed integral can be integrated using previous methods.
+
+\subsubsection{Integrals of form }
+$$\displaystyle\int \dfrac{1}{(ax^2+bx+c) \sqrt{px+q}} \, dx$$
+Using $\textit{u-sub}$,
+\\
+Let $$u^2=px+q$$
+Now, the transformed integral can be integrated using previous methods.
+
+\subsubsection{Integrals of form }
+$$\displaystyle\int \dfrac{1}{(ax+b)(\sqrt{px^2+qx+r})} \, dx$$
+Using $\textit{u-sub}$,
+\\
+Let $$\dfrac{1}{u}=ax+b$$
+Now, the transformed integral can be integrated using previous methods.
+
+\subsubsection{Integrals of form }
+$$\displaystyle\int \dfrac{1}{(ax^2+b)\sqrt{cx^2+d}} \, dx$$
+Using $\textit{u-sub}$,
+\\
+Let $$\dfrac{1}{\sqrt{u}}=x$$
+Now, the transformed integral can be integrated using previous methods.
+
+\subsubsection{Integrals of form }
+$$\displaystyle\int \dfrac{1}{(x-k)^r\sqrt{ax^2+bx+c}} \, dx, r \ge 2$$
+Using $\textit{u-sub}$,
+\\
+Let $$\dfrac{1}{u}=x-k$$
+Now, the transformed integral can be integrated using previous methods.
+
+\subsubsection{Integrals of form }
+$$\displaystyle\int \dfrac{ax^2+bx+c}{(\alpha x + \beta)\sqrt{px^2+qx+r}} \, dx$$
+
+Express, $$ax^2+bx+c=\lambda (\alpha x + \beta)\left[\dv{x}(px^2+qx+r)\right]+\mu (\alpha x + \beta)+\gamma$$
+Now, the transformed integral can be integrated using previous methods.
+
+\subsection{integrals of form }
+$$\displaystyle\int \sin^m x \cdot \cos^n x \, dx$$
+\subsubsection{If one of $m$ or $n$ is odd, $\hspace{2mm} m,n \in \mathbb{N}$ }
+Then, we \textit{u-sub} the term with even power, i.e.
+\\
+If $m=2k+1, n=2p$ then, $u=\cos x$ \\
+If $m=2p, n=2k+1$ then, $u=\sin x$
+\subsubsection{If both $m$ and $n$ are odd, $\hspace{2mm} m,n \in \mathbb{N}$}
+Then, \textit{u-sub} any of $\cos x$ or $\sin x$.
+\subsubsection{If both $m$ and $n$ are even, $\hspace{2mm} m,n \in \mathbb{N}$}
+Use Trig. indentities
+\subsubsection{If $\dfrac{m+n-2}{2} \in \mathbb{Z^-}$, $\hspace{2mm} m,n \in \mathbb{Q}$}
+Then, \textit{u-sub}, $u=\tan x$ or $u=\cot x$
+\subsection{Integrals of form }
+$$\displaystyle\int x^m (a+bx^n)^p \, dx$$
+\subsubsection{If $P \in \mathbb{N}$}
+Use binomial expansion and then integrate.
+\subsubsection{If $P \in \mathbb{Z^-}$}
+Use \textit{u-sub}, 
+\\
+Let $$u^k=x, \hspace{2mm} k = LCM(m,n)$$
+\subsubsection{If $\dfrac{m+1}{n} \in \mathbb{Z}$ and $P \in \mathbb{Q}$}
+Use \textit{u-sub}, 
+\\
+Let $$u^k=a+bx^n$$
+where, if $P=\dfrac{a}{b}, HCF(a,b)=1$ then $k=b$
+\subsubsection{$\dfrac{m+1}{n}+P \in \mathbb{Z}$ and $P \in \mathbb{Q}$}
+Use \textit{u-sub}, 
+\\
+Let $$u^kx^n=a+bx^n$$
+where, if $P=\dfrac{a}{b}, HCF(a,b)=1$ then $k=b$
+
 \end{document}
