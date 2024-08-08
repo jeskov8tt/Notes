@@ -46,13 +46,15 @@
 \maketitle
 
 \section{Fundamental Definition of \\ Indefinite Integration}
-If $f$ and $F$ and functions such that $\displaystyle\dv{x}(F(x))=f(x)$ then $F$ is anti-derivative of $f$ w.r.t. $x$ symbolically, $$\displaystyle\int f(x) \,dx=F(x)+C$$
+If $f$ and $F$ and functions such that $\displaystyle\dv{x}(F(x))=f(x)$ then $F$ is anti-derivative of $f$ w.r.t. $x$
+\\
+Symbolically, $$\displaystyle\int f(x) \,dx=F(x)+C$$
 where $C$ is the constant of Integration
 
 \section{Anti-Derivatives of Some Standard Functions}
 \begin{enumerate}[i.]
     \item $\displaystyle\int k\cdot f(x) \, dx = k \cdot \displaystyle\int f(x) \, dx$
-    \item $\displaystyle\int [f_{1}(x)\pm f_{2}(x)\pm f_{3}(x)\pm \ldots \pm f_{n}(x)] \, dx= \displaystyle\int f_{1}(x) \, dx\pm \displaystyle\int f_{2}(x) \, dx\pm \hphantom{1cm}\hspace{3cm} \displaystyle\int f_{3}(x) \, dx \pm \ldots \displaystyle\int f_{n}(x) \, dx$
+    \item $\displaystyle\int \left[f_{1}(x)\pm f_{2}(x)\pm f_{3}(x)\pm \ldots \pm f_{n}(x)\right] \, dx= \displaystyle\int f_{1}(x) \, dx \, \pm \displaystyle\int f_{2}(x) \, dx \, \pm \hphantom{1cm}\hspace{3cm} \displaystyle\int f_{3}(x) \, dx \,  \pm \ldots \displaystyle\int f_{n}(x) \, dx$
     \item $\displaystyle\int x^n \, dx=\dfrac{x^{n+1}}{n+1} +C \hfill \hspace{2mm} n \not=-1$
     \item $\displaystyle\int \dfrac{1}{x} \, dx=\ln \abs{x} +C$
     \item $\displaystyle\int e^x \, dx=e^x +C$
@@ -73,7 +75,8 @@ where $C$ is the constant of Integration
     \item $\displaystyle\int \dfrac{-1}{1+x^2} \, dx= \cot^{-1}x +C$
     \item $\displaystyle\int \frac{1}{x\displaystyle\sqrt{x^2-1}} \, dx=\sec^{-1}x +C$
     \item $\displaystyle\int \dfrac{-1}{x\displaystyle\sqrt{x^2-1}} \, dx=\csc^{-1}x+C$
-    \item $\displaystyle\int \sqrt{x} \, dx=\dfrac{2x\sqrt{x}}{3}+C$
+    \item $\displaystyle\int \sqrt{x} \, dx=\dfrac{2}{3}x^{\sfrac{3}{2}}+C$
+    \item $\displaystyle\int \dfrac{1}{\sqrt{x}} \, dx=2\sqrt{x}+C$
     \item $\displaystyle\int \dfrac{dx}{x^2-1}=\ln \abs{\dfrac{x-1}{x+1}}+C $
     \item $\displaystyle\int \dfrac{dx}{\sqrt{1+x^2}}=\ln \abs{x+\sqrt{x^2+1}}+C$
     \item $\displaystyle\int \dfrac{dx}{\sqrt{x^2-1}}=\ln \abs{x+\sqrt{x^2-1}}+C$
@@ -112,7 +115,7 @@ The transformed integral can be integrated using previous methods.
 \subsection{Integrals of form}
 $$\int \dfrac{px+q}{ax^2+bx+c} \, dx, \int \dfrac{px+q}{\sqrt{ax^2+bx+c}} \, dx, \int \left(px+q\right)\sqrt{ax^2+bx+c} \, dx $$
 $$px+q=\lambda \dv{x}(ax^2+bx+c) +\mu$$
-Now, after finding $\lambda,  \mu$, \\For the 1st part, use $\textit{u sub}$,\\ Let $$u= ax^2+bx+c$$
+After finding $\lambda,  \mu$, \\For the 1st part, use $\textit{u sub}$,\\ Let $$u= ax^2+bx+c$$
 2nd part of the integral can be integrated using previous methods.
 \subsection{Integrals of form $$\int \dfrac{K(x)}{ax^2+bx+c} \, dx$$ where $deg(K(x))\ge2$}
 
@@ -124,7 +127,7 @@ can be integrated using previous methods.
 \subsection{Integrals of form}
 $$\int \dfrac{ax^2+bx+c}{px^2+qx+r} \, dx, \int \dfrac{ax^2+bx+c}{\sqrt{px^2+qx+r}} \, dx, \int \left(ax^2+bx+c\right)\sqrt{px^2+qx+r} \, dx$$
 $$ax^2+bx+c= \lambda \left(px^2+qx+r\right)+\mu \dv{x}(px^2+qx+r)+\gamma$$
-For $1$st part use Integration by Parts, 2nd and 3rd part can be integrated using previous methods.
+For the 3rd integral, in the $1$st part use Trig sub. and  Integration by Parts, \\ 2nd part use \textit{u-sub} and 3rd part can be integrated using previous methods.
 
 \subsection{Trig. Integrals}
 \subsubsection{Integrals of form}
@@ -143,7 +146,7 @@ $$\int \dfrac{dx}{a\sin x +b \cos x}, \int \dfrac{dx}{a+b\sin x}, \int \dfrac{dx
 Steps -
 \begin{enumerate}[1.]
     \item Replace $\sin x = \dfrac{2\tan \sfrac{x}{2}}{1+\tan^2 \sfrac{x}{2}}$ and $\cos x = \dfrac{1-\tan^2 \sfrac{x}{2}}{1+\tan^2 \sfrac{x}{2}}$
-    \item Let $u=\tan \sfrac{x}{2}$, $du= \dfrac{1}{2} \sec^2 \sfrac{x}{2} \, dx$ is already present in the numerator.
+    \item Let $u=\tan \sfrac{x}{2} \implies du= \dfrac{1}{2} \sec^2 \sfrac{x}{2} \, dx$ is already present in the numerator.
 \end{enumerate}
 Now, the transformed integral can be integrated using previous methods.
 
@@ -154,14 +157,12 @@ $$I=\dfrac{1}{\sqrt{a^2+b^2}}\int \csc \left(x+ \tan^{-1}\left(\dfrac{b}{a}\righ
 $$I=\dfrac{1}{\sqrt{a^2+b^2}}\ln \abs{\tan \left(\dfrac{x}{2}+ \dfrac{1}{2} \tan^{-1} \left(\dfrac{b}{a}\right) \right)}+C$$
 \subsubsection{Integrals of form }
 $$\int \dfrac{p\cos x + q \sin x +r}{a \cos x + b \sin x + c} \, dx , \int \dfrac{p \cos x + q \sin x }{a \cos x + b \sin x} \, dx $$
-
 Steps for (i),
 \begin{enumerate}[1.]
     \item Express $\textit{Numerator}= \lambda \textit{ Denominator } + \mu \textit{ Derivative of denominator } + \gamma$
 \end{enumerate}
 Now, the transformed integral can be integrated using previous methods.
-
-
+\\ \\
 Steps for (ii),
 \begin{enumerate}[1.]
     \item Express $\textit{Numerator}=\lambda \textit{ Denominator } + \mu \textit{ Derivative of Denominator}$
@@ -170,13 +171,15 @@ Now, the transformed integral can be integrated using previous methods.
 \subsection{Integration by parts}
 
 $$\int uv \, dx = u \int v \, dx - \int \left(u' \int v \, dx\right) \, dx$$
-
-
 $u$ is the function which has to be differentiated ($D$), $v$ is the function which has to be integrated ($I$)
 
 \subsection{Integrals of form }
 $$I=\int e^{g(x)} \left(f(x)g'(x)+f'(x)\right) \, dx$$
 $I=e^{g(x)} \cdot f(x) +C$
+\\
+If $g(x)=x$,
+\\
+Then, $$\displaystyle\int e^x \left(f(x)+f'(x)\right) \, dx=e^x \cdot f(x)+C$$
 
 \subsection{Integrals of form }
 $$S=\int e^{ax} \sin bx \, dx, C = \int e^{ax} \cos bx \, dx$$
@@ -196,7 +199,7 @@ If $h(x)$ is Improper, we make it Proper by polynomial long division, i.e. $$h(x
 Clearly, $\dfrac{r(x)}{g(x)}$ is Proper.
 
 
-Now, assuming $h(x)$ is Proper,
+Now, assuming $h(x)$ is Proper, following cases arise -
 \subsubsection{$g(x)$ is the product of non-repeating linear factors}
 Let $$g(x)=L_{1}(x) \cdot L_{2}(x) \cdot  \ldots \cdot L_{m}(x)$$ where $L_{i}(x)$ are linear functions.\\
 Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
@@ -218,12 +221,12 @@ Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
 $$\dfrac{f(x)}{g(x)}=\nsum[1.4]_{i} \dfrac{A_{i}}{L_{i}(x)}+ \nsum[1.4]_{j} \dfrac{xB_{j} +C_{j}}{Q_{j}(x)}$$
 
 \subsubsection{$g(x)$ contains some non-repeating linear and repeating quadratic factors}
-Let $$g(x)=\prod_{i} L_{i}(x) \prod_{j} Q_{j} (x) \prod_{\omega} Q_{\omega}^k (x)$$
+Let $$g(x)=\prod_{i} L_{i}(x) \prod_{j} Q_{j} (x) \prod_{\omega} \aleph_{\omega}^k (x)$$
 
-Where, $Q_{\omega}^k(x)$ are repeating quadratic factors.\\
+Where, $\aleph_{\omega}(x)$ are repeating quadratic factors.\\
 Then, we can expand $\dfrac{f(x)}{g(x)}$ in terms of partial fractions as,
 
-$$\dfrac{f(x)}{g(x)}=\nsum[1.4]_{i} \dfrac{A_{i}}{L_{i}(x)}+ \nsum[1.4]_{j} \dfrac{x B_{j}+ C_{j}}{Q_{j}(x)}+\nsum[2]_{\omega} \nsum[1.4]_{r} \dfrac{xD_{r}+E_{r}}{Q_{\omega}^r (x)}$$
+$$\dfrac{f(x)}{g(x)}=\nsum[1.4]_{i} \dfrac{A_{i}}{L_{i}(x)}+ \nsum[1.4]_{j} \dfrac{x B_{j}+ C_{j}}{Q_{j}(x)}+\nsum[2]_{\omega} \nsum[1.4]_{r} \dfrac{xD_{r}+E_{r}}{\aleph_{\omega}^r (x)}$$
 
 \subsection{Integrals of form}
 
@@ -298,18 +301,89 @@ $$\displaystyle\int x^m (a+bx^n)^p \, dx$$
 \subsubsection{If $P \in \mathbb{N}$}
 Use binomial expansion and then integrate.
 \subsubsection{If $P \in \mathbb{Z^-}$}
-Use \textit{u-sub}, 
+Use \textit{u-sub},
 \\
 Let $$u^k=x, \hspace{2mm} k = LCM(m,n)$$
 \subsubsection{If $\dfrac{m+1}{n} \in \mathbb{Z}$ and $P \in \mathbb{Q}$}
-Use \textit{u-sub}, 
+Use \textit{u-sub},
 \\
 Let $$u^k=a+bx^n$$
 where, if $P=\dfrac{a}{b}, HCF(a,b)=1$ then $k=b$
 \subsubsection{$\dfrac{m+1}{n}+P \in \mathbb{Z}$ and $P \in \mathbb{Q}$}
-Use \textit{u-sub}, 
+Use \textit{u-sub},
 \\
 Let $$u^kx^n=a+bx^n$$
 where, if $P=\dfrac{a}{b}, HCF(a,b)=1$ then $k=b$
 
+\subsection{Euler's Substitutions}
+\subsubsection*{Integrals of Form }
+$$\displaystyle\int R(x,\sqrt{ax^2+bx+c}) \, dx$$
+where, integrand is a rational function of $x$ and $\sqrt{ax^2+bx+c}$
+\subsubsection{If $a>0$}
+Then,
+\\
+Let $$\sqrt{ax^2+bx+c}=u\pm x\sqrt{a}$$
+\subsubsection{If $c>0$}
+Then,
+\\
+Let $$\sqrt{ax^2+bx+c}=ux + \sqrt{c}$$
+\subsubsection{If real roots $\alpha, \beta$ of the equation $ax^2+bx+c=0$}
+Then,
+\\
+Let $$\sqrt{ax^2+bx+c}=(x-\alpha)u$$
+
+\subsection{Reduction Formulae}
+\subsubsection{Reduction Formula for }
+$$I_{n}=\displaystyle\int \sin^n x \, dx$$
+$$nI_{n}=-{\sin^{n-1} x \cdot \cos x}+(n-1)I_{n-2}$$
+\subsubsection{Reduction Formula for }
+$$I_{n}=\displaystyle\int \cos^{n} \, dx$$
+$$nI_{n}=\sin x \cdot \cos^{n-1}x + (n-1)I_{n-2}$$
+\subsubsection{Reduction Formula for }
+$$I_{n}=\displaystyle\int \tan^n x \, dx$$
+$$I_{n}=\dfrac{\tan^{n-1} x}{n-1}-I_{n-2}$$
+\subsubsection{Reduction Formula for }
+$$I_{n}=\displaystyle\int \csc^n x \, dx$$
+$$(n-1)I_{n}=-\csc^{n-2} x\cot x +(n-2) I_{n-2}$$
+\subsubsection{Reduction Formula for }
+$$I_{n}=\displaystyle\int \sec^n x \, dx$$
+$$(n-1)I_{n}=\sec^{n-2} x \tan x + (n-2)I_{n-2}$$
+\subsubsection{Reduction Formula for }
+$$I_{n}=\displaystyle\int \cot^n x \, dx$$
+$$I_{n}=-\dfrac{\cot^{n-1}x}{n-1} - I_{n-2}$$
+\subsubsection{Reduction Formula for }
+$$I_{m,n}=\displaystyle\int \sin^m x \cos^n x \, dx$$
+\begin{equation*}
+    \begin{split}
+        I_{m,n} &= - \dfrac{\sin^{m-1} x \cos^{n+1} x}{m+n}+\dfrac{m-1}{m+n}I_{m-2,n} \\[2mm]
+        &= \dfrac{\sin^{m+1} x \cos^{n+1} x}{m+n}+\dfrac{n-1}{m+n} I_{m,n-2}\\
+        &= \dfrac{\sin^{m+1}x \cos^{n+1} x}{m+1} + \dfrac{m+n+2}{m+1}I_{m+2,n}\\
+        &= \dfrac{\sin^{m+1} x \cos^{n+1} x }{n+1} + \dfrac{m+n+2}{n+1} I_{m,n+2}\\
+        &= \dfrac{\sin^{m-1}x \cos^{n+1}x}{n+1} + \dfrac{m-1}{n+1} I_{m-2,n+2}\\
+        &= \dfrac{\sin^{m+1}x \cos^{n-1}x}{m+1} + \dfrac{n-1}{m+1}I_{m+2,n-2}
+    \end{split}
+\end{equation*}
+\subsubsection{Reduction Formula for }
+$$I_{m,n}=\displaystyle\int \cos^m x \sin nx  \, dx$$
+$$I_{m,n}=-\dfrac{\cos^m x \cos nx }{m+n} + \dfrac{m}{m+n} I_{m-1,n-1}$$
+\subsubsection{Reduction Formula for }
+$$I_{m,n}=\displaystyle\int \cos^m x \cos nx  \, dx$$
+$$I_{m,n}=\dfrac{\cos^m x \sin nx}{m+n}+\dfrac{m}{m+n}I_{m-1,n-1}$$
+\subsubsection{Reduction Formula for }
+$$I_{m,n}=\displaystyle\int \sin^m x \sin nx  \, dx$$
+$$I_{m,n}=\dfrac{n\sin^m x \cos nx }{m^2 - n^2}- \dfrac{m\sin^{m-1}x \cos x \cos nx}{m^2-n^2}+\dfrac{m(m-1)}{m^2-n^2}I_{m-2,n}$$
+\subsubsection{Reduction Formula for }
+$$I_{m,n}=\displaystyle\int \sin^m x \cos nx  \, dx$$
+$$I_{m,n}=\dfrac{n\sin^m x \sin nx}{m^2-n^2}- \dfrac{m \sin^{m-1}x \cos x \cos nx }{m^2-n^2}+\dfrac{m(m-1)}{m^2-n^2}I_{m-2,n}$$
+\subsection{Integration Using Differentiation}
+\subsubsection*{Integrals of form }
+$$\displaystyle\int \dfrac{1}{(a+b\cos x)^2} \, dx, \displaystyle\int \dfrac{1}{(a+b\sin x)^2} \, dx, \displaystyle\int \dfrac{1}{(\sin x + a \sec x)^2} \, dx$$
+$$\displaystyle\int \dfrac{a+b \sin x}{(b + a \sin x)^2} \, dx$$
+To evaluate integral of above form, follow the steps- 
+\begin{enumerate}[i.]
+    \item Let $A=\dfrac{\sin x}{a+b\cos x }$ or $\dfrac{\cos x }{a+b \sin x}$ according to the integral to be evaluated \\[2mm]
+     is of the form $\displaystyle\int \dfrac{1}{(a+b \cos x)^2} \, dx$ or $\displaystyle\int \dfrac{1}{(a+b\sin x)^2} \, dx$
+     \item Find $\displaystyle\dv{A}{x}$ and express it in terms of $\dfrac{1}{a+b\cos x}$ or $\dfrac{1}{a+b\sin x}$ as the case may be.
+     \item Integrate both sides of the expression obtained in step (ii) to obtain the value of the required integral.
+\end{enumerate}
 \end{document}
