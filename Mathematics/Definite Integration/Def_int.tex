@@ -1,38 +1,109 @@
 \documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{graphicx, amsmath, amssymb, enumerate, microtype, titlesec, xfrac, xcolor, mathtools, multicol}
 \usepackage[italicdiff]{physics}
-\usepackage{enumerate}
-\usepackage{microtype}
-\DisableLigatures{encoding= *, family=*}
-\usepackage{titlesec}
-\usepackage{xfrac}
-\setcounter{secnumdepth}{4}
-\usepackage{xcolor}
 \usepackage[bookmarks=false]{hyperref}
-\usepackage{mathtools}
-\usepackage{tikz} 
-\newcommand*\fullcirc[1][0.3ex]{\tikz\fill (0,0) circle (#1);} 
-\usepackage{bigints}
 \hypersetup{
     colorlinks=true,
     linkcolor=[RGB]{59 108 209},
     urlcolor=[RGB]{59 108 209}
 }
 \urlstyle{same}
-
+\DisableLigatures{encoding= *, family=*}
+\setcounter{secnumdepth}{4}
+\newcommand{\nsum}[1][1.4]{% only for \displaystyle
+    \mathop{%
+        \raisebox
+            {-#1\depthofsumsign+1\depthofsumsign}
+            {\scalebox
+                {#1}
+                {$\displaystyle\sum$}%
+            }
+    }
+}
+\newlength{\depthofsumsign}
+\setlength{\depthofsumsign}{\depthof{$\sum$}}
+\newlength{\totalheightofsumsign}
+\newlength{\heightanddepthofargument}
+\def\tmp#1 #2\relax{#1}
+\setbox0=\hbox{$\xdef\intfont{%
+    \expandafter\tmp\fontname\textfont3\expandafter\space\space\relax}$}
+\font\tmp=\intfont\space at10pt\relax
+\setbox0=\hbox{$\textfont3=\tmp \displaystyle \int$}
+\dimen0=\ht0 \advance\dimen0 by\dp0 \divide\dimen0 by10 
+\xdef\intsize{\the\dimen0}
+\def\dividedimen (#1/#2){\expandafter\ignorept\the
+   \dimexpr\numexpr\number\dimexpr#1\relax
+   *65536/\number\dimexpr#2\relax\relax sp\relax
+}
+{\lccode`\?=`\p \lccode`\!=`\t  \lowercase{\gdef\ignorept#1?!{#1}}}
+\def\flexibleint{\def\fxintL{}\def\fxintU{}\futurelet\next\fxintA}
+\def\fxintA{\ifx\next_\expandafter\fxintB\else\expandafter\fxintC\fi}
+\def\fxintB_#1{\def\fxintL{#1}\fxintC}
+\def\fxintC{\futurelet\next\fxintD}
+\def\fxintD{\ifx\next^\expandafter\fxintE\else\expandafter\fxintF\fi}
+\def\fxintE^#1{\def\fxintU{#1}\fxintF}
+\def\fxintF#1{\begingroup
+   \setbox0=\hbox{$\displaystyle{#1}$}%
+   \dimen0=\ht0 \advance\dimen0 by\dp0
+   \setbox1=\hbox{$\vcenter{\copy0}$}%
+   \font\tmp=\intfont\space at\dividedimen(\dimen0/\intsize)pt
+   \lower\dimexpr\dp0-\dp1\hbox{%
+      $\textfont3=\tmp \displaystyle\int_{\fxintL}^{\fxintU}$}
+   \box0
+   \endgroup
+}
+\newcommand*\fullcirc[1][0.3ex]{\tikz\fill (0,0) circle (#1);} 
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
-\title{}
+\title{Definite Integration}
 \author{}
 \date{}
 
 \begin{document}
 \maketitle
 
-\section{}
+\section{Definite Integral}
+Let $f(x)$ be a function defined in the closed interval $[a,b]$ and $F(x)$ be its anti-derivative, then $$\displaystyle\int_{a}^{b} f(x) \, dx=F(b)-F(a) $$
+is called the definite integral of the function $f(x)$ over the interval $[a,b]$, $a$ and $b$ are called limits of integration, lower and upper limit respectively.
+
+\section{Geometrical Interpretation of Definite Integral}
+If $f(x)>0 \hspace{2mm} \forall \hspace{2mm} x \in [a,b]$, then $\displaystyle\int_{a}^{b} f(x) \, dx $ is numerically equal to the area bounded by the curves $y=f(x), y=0, x=a, x=b$
+\\
+In general, $\displaystyle\int_{a}^{b} f(x) \, dx $ represents the net signed area (or algebraic sum of areas) i.e area below the axis of $x$ is counted as $-ve$ and that above is counted as $+ve$
+
+\section{Definite Integration by \textit{u-sub}}
+To evaluate definite integral of type, $$I=\displaystyle\int_{a}^{b} f(x)g'(x) \, dx $$
+Let $$u=g(x) \implies du=g'(x) \, dx$$
+Now, $I$ trasforms to, $$I=\displaystyle\int_{g(a)}^{g(b)} f(u) \, du $$
+\subsection*{Important Note}
+\begin{itemize}
+    \item For the substitution to be valid, it must be continuous in the interval of integration, i.e. If $u=g(x)$, then $g(x)$ must be continuous in $[a,b]$.
+\end{itemize}
+
+\section{Properties of Definite Integration}
+\subsection{Definite Integration is independent of the change of variable}
+$$\displaystyle\int_{a}^{b} f(x) \, dx =\displaystyle\int_{a}^{b} f(u) \, du $$
+\subsection{If limits of definite integral are flipped, then its value only differs in sign}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = - \displaystyle\int_{b}^{a} f(x) \, dx $$
+\section{King's Rule}
+$$\displaystyle\int_{a}^{b} f(x)  \, dx=\displaystyle\int_{a}^{b} f(a+b-x) \, dx  $$
+\section{Integration of Piecewise Functions }
+\subsection{}
+$$\displaystyle\int_{a}^{b} f(x) \, dx=\displaystyle\int_{a}^{c} f(x) \, dx +\displaystyle\int_{c}^{b} f(x) \, dx  $$
+$\hfill c \in \mathbb{R}$
+\subsection{}
+$$\displaystyle\int_{0}^{a} f(x) \, dx=\displaystyle\int_{0}^{\sfrac{a}{2} } f(x) \, dx +\displaystyle\int_{0}^{\sfrac{a}{2} } f(a-x) \, dx  $$
+\section{Integration of Even, Odd Functions}
+$$\displaystyle\int_{-a}^{a} f(x) \, dx =\begin{cases}
+        0                                      & f(x)=-f(-x) \text{ Odd symmetric about }
+        x= 0                                                                                  \\
+        2 \displaystyle\int_{0}^{a} f(x) \, dx & f(x)=f(-x) \text{ Even symmetric about } x=0\end{cases}$$
+\section{Integration in case of Even, Odd Symmetries}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \begin{cases}
+
+        0                                                      & f(a+x)=-f(b-x) \hspace{23mm}\text{ Odd symmetric}  \\[2mm] & \text{or } f\left(\dfrac{a+b}{2}-x \right)=-f\left(\dfrac{a+b}{2}+x \right) { about } \hspace{1mm}x=\dfrac{a+b}{2}\\[3mm]
+        2 \displaystyle\int_{a}^{\sfrac{(a+b)}{2}} f(x)  \, dx & f(a+x)=f(b-x) \hspace{23mm}\text{ Even symmetric}  \\[2mm] & \text{or } f\left(\dfrac{a+b}{2}-x \right)=f\left(\dfrac{a+b}{2}+x \right) { about } \hspace{1mm}x=\dfrac{a+b}{2}\end{cases}$$
+
 \end{document}

@@ -1,21 +1,63 @@
 \documentclass{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{graphicx, amsmath, amssymb, enumerate, microtype, titlesec, xfrac, xcolor, mathtools, multicol, mathrsfs}
 \usepackage[italicdiff]{physics}
-\usepackage{enumerate}
-\usepackage{microtype}
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=[RGB]{59 108 209},
+    urlcolor=[RGB]{59 108 209}
+}
+\urlstyle{same}
 \DisableLigatures{encoding= *, family=*}
-\usepackage{titlesec}
-\usepackage{xfrac}
 \setcounter{secnumdepth}{4}
-
+\newcommand{\nsum}[1][1.4]{% only for \displaystyle
+    \mathop{%
+        \raisebox
+            {-#1\depthofsumsign+1\depthofsumsign}
+            {\scalebox
+                {#1}
+                {$\displaystyle\sum$}%
+            }
+    }
+}
+\newlength{\depthofsumsign}
+\setlength{\depthofsumsign}{\depthof{$\sum$}}
+\newlength{\totalheightofsumsign}
+\newlength{\heightanddepthofargument}
+\def\tmp#1 #2\relax{#1}
+\setbox0=\hbox{$\xdef\intfont{%
+    \expandafter\tmp\fontname\textfont3\expandafter\space\space\relax}$}
+\font\tmp=\intfont\space at10pt\relax
+\setbox0=\hbox{$\textfont3=\tmp \displaystyle \int$}
+\dimen0=\ht0 \advance\dimen0 by\dp0 \divide\dimen0 by10 
+\xdef\intsize{\the\dimen0}
+\def\dividedimen (#1/#2){\expandafter\ignorept\the
+   \dimexpr\numexpr\number\dimexpr#1\relax
+   *65536/\number\dimexpr#2\relax\relax sp\relax
+}
+{\lccode`\?=`\p \lccode`\!=`\t  \lowercase{\gdef\ignorept#1?!{#1}}}
+\def\flexibleint{\def\fxintL{}\def\fxintU{}\futurelet\next\fxintA}
+\def\fxintA{\ifx\next_\expandafter\fxintB\else\expandafter\fxintC\fi}
+\def\fxintB_#1{\def\fxintL{#1}\fxintC}
+\def\fxintC{\futurelet\next\fxintD}
+\def\fxintD{\ifx\next^\expandafter\fxintE\else\expandafter\fxintF\fi}
+\def\fxintE^#1{\def\fxintU{#1}\fxintF}
+\def\fxintF#1{\begingroup
+   \setbox0=\hbox{$\displaystyle{#1}$}%
+   \dimen0=\ht0 \advance\dimen0 by\dp0
+   \setbox1=\hbox{$\vcenter{\copy0}$}%
+   \font\tmp=\intfont\space at\dividedimen(\dimen0/\intsize)pt
+   \lower\dimexpr\dp0-\dp1\hbox{%
+      $\textfont3=\tmp \displaystyle\int_{\fxintL}^{\fxintU}$}
+   \box0
+   \endgroup
+}
+\newcommand*\fullcirc[1][0.3ex]{\tikz\fill (0,0) circle (#1);} 
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
-\title{}
+\title{Extra Topics}
 \author{}
 \date{}
 
@@ -28,4 +70,24 @@ If $x \in \mathbb{R}^+$ and $n \in \mathbb{N}$, we can uniquely write $x=mn+r$, 
 We define $$x \bmod n=r$$
 \newline
 e.g. $10.5 \bmod 3=1.5$
+\section{Every Function can be expressed as sum of two Even and Odd Symmetric Functions about $x=a$}
+Let $f(x)$ be any general function.\\
+Let $E(x)$ be a function Even Symmetric about $x=a$ and\\ $O(x)$ be a function Odd Symmetric about $x=a$\\
+$\therefore$
+\begin{equation*}
+    \begin{split}
+    E(a+x)=E(a-x)\\
+    O(a+x)=-O(a-x)
+    \end{split}
+\end{equation*}
+such that, $$f(x)=E(x)+O(x)$$
+Hence, 
+\begin{equation*}
+    \begin{split}
+        E(x)=\dfrac{f(x)+f(2a-x)}{2}\\
+        O(x)=\dfrac{f(x)-f(2a-x)}{2}  
+    \end{split}
+\end{equation*}
+
+$$f(x)=\underbrace{\dfrac{f(x)+f(2a-x)}{2}}_{\text{Even Symmetric Part}}+\underbrace{\dfrac{f(x)-f(2a-x)}{2} }_{\text{Odd Symmetric Part}}$$
 \end{document}
