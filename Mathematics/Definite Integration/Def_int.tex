@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{graphicx, amsmath, amssymb, enumerate, microtype, titlesec, xfrac, xcolor, mathtools, multicol}
+\usepackage{graphicx, amsmath, amssymb, enumerate, microtype, titlesec, xfrac, xcolor, mathtools, multicol, bigints}
 \usepackage[italicdiff]{physics}
 \usepackage[bookmarks=false]{hyperref}
 \hypersetup{
@@ -29,7 +29,7 @@
     \expandafter\tmp\fontname\textfont3\expandafter\space\space\relax}$}
 \font\tmp=\intfont\space at10pt\relax
 \setbox0=\hbox{$\textfont3=\tmp \displaystyle \int$}
-\dimen0=\ht0 \advance\dimen0 by\dp0 \divide\dimen0 by10 
+\dimen0=\ht0 \advance\dimen0 by\dp0 \divide\dimen0 by10
 \xdef\intsize{\the\dimen0}
 \def\dividedimen (#1/#2){\expandafter\ignorept\the
    \dimexpr\numexpr\number\dimexpr#1\relax
@@ -52,7 +52,7 @@
    \box0
    \endgroup
 }
-\newcommand*\fullcirc[1][0.3ex]{\tikz\fill (0,0) circle (#1);} 
+\newcommand*\fullcirc[1][0.3ex]{\tikz\fill (0,0) circle (#1);}
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
@@ -103,7 +103,140 @@ $$\displaystyle\int_{-a}^{a} f(x) \, dx =\begin{cases}
 \section{Integration in case of Even, Odd Symmetries}
 $$\displaystyle\int_{a}^{b} f(x) \, dx = \begin{cases}
 
-        0                                                      & f(a+x)=-f(b-x) \hspace{23mm}\text{ Odd symmetric}  \\[2mm] & \text{or } f\left(\dfrac{a+b}{2}-x \right)=-f\left(\dfrac{a+b}{2}+x \right) { about } \hspace{1mm}x=\dfrac{a+b}{2}\\[3mm]
-        2 \displaystyle\int_{a}^{\sfrac{(a+b)}{2}} f(x)  \, dx & f(a+x)=f(b-x) \hspace{23mm}\text{ Even symmetric}  \\[2mm] & \text{or } f\left(\dfrac{a+b}{2}-x \right)=f\left(\dfrac{a+b}{2}+x \right) { about } \hspace{1mm}x=\dfrac{a+b}{2}\end{cases}$$
+        0                                                      & f(a+x)=-f(b-x) \hspace{23mm}\text{ Odd symmetric} \\[2mm] & \text{or } f\left(\dfrac{a+b}{2}-x \right)=-f\left(\dfrac{a+b}{2}+x \right) { \text{about} } \hspace{1mm}x=\dfrac{a+b}{2}\\[3mm]
+        2 \displaystyle\int_{\sfrac{(a+b)}{2}}^{b} f(x)  \, dx & f(a+x)=f(b-x) \hspace{23mm}\text{ Even symmetric} \\[2mm] & \text{or } f\left(\dfrac{a+b}{2}-x \right)=f\left(\dfrac{a+b}{2}+x \right) { \text{about} } \hspace{1mm}x=\dfrac{a+b}{2}\end{cases}$$
 
+\section{Change of Limits property}
+$$\displaystyle\int_{a}^{b} f(x) \, dx =\left(b-a\right)\displaystyle\int_{0}^{1} f[(b-a)x+a] \, dx $$
+Now, we can add any two (or more) integrals as they all will have same limits $0$ and $1$.
+\section{Even and Odd Integral Functions}
+\subsection{Even Integral Functions}
+If $O(x)$ is Odd Symmetric about $x=0$ \\[2mm]
+then, $f(x)=\displaystyle\int_{a}^{x} O(x) \, dx $ is Even Symmetric about $x=0$
+\subsection{Odd Integral Functions}
+If $E(x)$ is Even Symmetric about $x=0$ and $\displaystyle\int_{0}^{a} E(x) \, dx =0$\\[2mm]
+then, $f(x)=\displaystyle\int_{a}^{x} E(x) \, dx $ is Odd symmetric about $x=0$
+\section{Integration of Periodic Functions}
+Let $f(x)$ be a function with fundamental period $T$
+\subsection{Area under a periodic curve repeats with \\ same periodicity}
+$$\displaystyle\int_{0}^{nT} f(x) \, dx =n\displaystyle\int_{0}^{T} f(x) \, dx $$
+\subsection{Area under a periodic curve over an interval with length same as that of the period is same as the area enclosed in first period}
+$$\displaystyle\int_{a}^{a+T} f(x) \, dx=\displaystyle\int_{0}^{T}f(x)  \, dx  $$
+Also, \begin{enumerate}[i.]
+    \item $$\displaystyle\int_{a}^{a+nT} f(x) \, dx=\displaystyle\int_{0}^{nT} f(x) \, dx =n\displaystyle\int_{0}^{T} f(x) \, dx $$
+    \item $$\displaystyle\int_{a+nT}^{b+nT} f(x) \, dx= \displaystyle\int_{a}^{b} f(x) \, dx $$
+    \item $$\displaystyle\int_{a}^{b+nT} f(x) \, dx =\displaystyle\int_{a}^{b} f(x) \, dx + n \displaystyle\int_{0}^{T} f(x) \, dx $$
+    \item $$\displaystyle\int_{n_{1}T}^{n_{2}T} f(x) \, dx =(n_{2}-n_{1})\displaystyle\int_{0}^{T} f(x)  \, dx $$
+    \item $$\displaystyle\int_{a+n_{1}T}^{b+n_{2}T} f(x)  \, dx =\displaystyle\int_{a}^{b} f(x) \, dx +(n_{2}-n_{1})\displaystyle\int_{0}^{T} f(x) \, dx $$
+\end{enumerate}
+\section{Newton-Leibnitz's Rule for Differentiation \\under Integral sign}
+\subsection{General Case}
+If $\Phi (x) $ and $\Psi (x)$ are defined on $[a,b]$and are diffenetiable on $(a,b)$ and $f(x,t)$ is continuous, then
+$$\dv{x}\left[\displaystyle\int_{\Phi (x)}^{\Psi (x)} f(x,t) \, dt \right]=\displaystyle\bigintsss_{\Phi (x)}^{\Psi (x)} \pdv{x}f(x,t) \, dt \hspace{1.5mm}+\Psi'(x)f(x,\Psi(x))+\Phi'(x)f(x,\Phi(x)) $$
+
+\subsection*{Corollary 1}
+$$\dv{x}\left[\displaystyle\int_{\Phi (x)}^{\Psi (x)} f(t) \, dt \right]=\Psi'(x)f(\Psi(x))+\Phi'(x)f(\Phi(x)) $$
+\subsection*{Corollary 2}
+$$\dv{x}\left[\displaystyle\int_{a}^{b} f(x,t) \, dt \right]=\displaystyle\bigintssss_{a}^{b} \pdv{x}f(x,t) \, dt $$
+\section{Fundamental Definition of \\Definite Integration, \\ \textit{Integration as limit of a sum}}
+\subsection{Definite Integral as limit of Riemann Sum}
+
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty}{\nsum[1.4]_{i=1}^{n} {f(x_{i}^*) \Delta x_{i}}}$$
+\begin{itemize}
+    \item The interval $[a,b]$ is divided into $n$ partitions.
+    \item $a=x_{0}<x_{1}<x_{2}<x_{3}< \ldots < x_{n-1}<x_{n}=b$
+    \item $x_{i}^*$ is a point lying in the interval $(x_{i-1},x_{i}) \hfill i \in \mathbb{Z^+}$
+    \item $f(x^{*}_{i})$ gives height of formed rectangle, $\Delta x_{i} = x_{i}-x_{i-1}$ is its width.
+\end{itemize}
+\subsubsection{Definite Integral as limit of Upper Riemann Sum}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty}{\nsum[1.4]_{i=1}^{n} {f(x_{i}^*) \Delta x}}$$
+$f(x^*_{i})=max \left\{f(x_{i-1}),f(x_{i})\right\}$
+\subsubsection{Definite Integral as limit of Lower Riemann Sum}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty}{\nsum[1.4]_{i=1}^{n} {f(x_{i}^*) \Delta x}}$$
+$f(x^*_{i})=min \left\{f(x_{i-1}),f(x_{i})\right\}$
+\subsubsection{Definite Integral as limit of Left Endpoint Riemann Sum}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty}{\nsum[1.4]_{i=1}^{n} {f(x_{i}^*) \Delta x}}$$
+\begin{enumerate}[i.]
+    \item $x^*_{i}=x_{i-1}=\dfrac{(b-a)}{n}(i-1) $
+    \item $x_{0}=x_{1}=x_{2}= \ldots = x_{n-1}=x_{n}$
+    \item $\Delta x= \dfrac{b-a}{n} $
+
+\end{enumerate}
+\subsubsection{Definite Integral as limit of Midpoint Riemann Sum}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty}{\nsum[1.4]_{i=1}^{n} {f(x_{i}^*) \Delta x}}$$
+\begin{enumerate}[i.]
+    \item $x^*_{i}=\dfrac{x_{i-1}+x_{i}}{2}= \dfrac{\left(b-a\right)}{n}(2i-1)$
+    \item $x_{0}=x_{1}=x_{2}= \ldots = x_{n-1}=x_{n}$
+    \item $\Delta x= \dfrac{b-a}{n} $
+\end{enumerate}
+\subsubsection{Definite Integral as limit of Right Endpoint Riemann Sum}
+$$\displaystyle\int_{a}^{b} f(x) \, dx = \lim_{n \to \infty}{\nsum[1.4]_{i=1}^{n} {f(x_{i}^*) \Delta x}}$$
+\begin{enumerate}[i.]
+    \item $x^*_{i}=x_{i}=\dfrac{(b-a)}{n}i$
+    \item $x_{0}=x_{1}=x_{2}= \ldots = x_{n-1}=x_{n}$
+    \item $\Delta x= \dfrac{b-a}{n} $
+\end{enumerate}
+\subsection{$\dfrac{r}{n} $ form}
+$$\lim\limits_{n \to \infty}{\dfrac{1}{n} \nsum[1.4]_{r=\Phi (n)}^{\Psi (n)} f\left(\dfrac{r}{n}\right) }=\displaystyle\int_{a}^{b} f(x) \, dx $$
+$a= \lim\limits_{n \to \infty}{\dfrac{\Phi (n)}{n} }, b = \lim\limits_{n \to \infty}{ \dfrac{\Psi (n)}{n} }$
+
+\section{Inequalities involving Definite Integrals}
+\subsection{}
+$$\abs{\displaystyle\int_{a}^{b} f(x) \, dx }\le \displaystyle\int_{a}^{b} \abs{f(x)} \, dx $$
+Equality holds when $f(x)$ is of same sign $\forall \hspace{1mm} x \in [a,b]$
+\subsection{}
+$$\abs{\displaystyle\int_{a}^{b} f(x)g(x) \, dx }\le \sqrt{\left(\displaystyle\int_{a}^{b} f^2(x) \, dx \right)\left(\displaystyle\int_{a}^{b} g^2(x) \, dx \right)}$$
+\subsection{}
+If $f(x)$ is continuous on $[a,b]$ and $f_{l}(x)$ and $f_{h}(x)$ are also continuous on $[a,b]$ such that,
+$$f_{l}(x) \le f(x) \le f_{h}(x)$$
+$\hspace{11cm}\forall \hspace{1mm} x \in [a,b]$
+then, $$\displaystyle\int_{a}^{b} f_{l}(x) \, dx \le \displaystyle\int_{a}^{b} f(x) \, dx \le \displaystyle\int_{a}^{b} f_{h}(x) \, dx $$
+\subsection{}
+If $m$ and $M$ be global minimum and global maximum of $f(x)$ respectively in $[a,b]$, then
+$$m(b-a) \le \displaystyle\int_{a}^{b} f(x) \, dx \le M(b-a)$$
+\section{Gamma Function}
+Let $s >0 $, then the improper integral \begin{align*}
+    \Gamma (s) &=\displaystyle\int_{0}^{\infty} e^{-t} \, t^{s-1} \, dt \\[2mm]
+    &= \displaystyle\int_{0}^{1} \left(\ln \left(\dfrac{1}{t} \right)\right)^{s-1} \, dt 
+\end{align*}
+is defined to be the Gamma Function.
+\subsection{Properties of Gamma Function}
+\begin{enumerate}[i.]
+    \item $\Gamma (s+1)=s \cdot \Gamma (s)$
+    \item $\Gamma (n+1)= n! \hfill n \in \mathbb{N}_{0}$
+    \item $\Gamma \left(\dfrac{1}{2}\right)= \sqrt{\pi}$
+    \item $\displaystyle\int_{0}^{\sfrac{\pi}{2}}\sin^m x \cdot \cos^n x  \, dx = \dfrac{\Gamma \left(\dfrac{m+1}{2} \right) \Gamma \left(\dfrac{n+1}{2} \right)}{2 \Gamma \left(\dfrac{m+n+2}{2} \right)} $
+    \item $\Gamma \left(s\right) \cdot \Gamma \left(1-s\right)= \dfrac{\pi}{\sin s \pi} \hfill s \in (0,1)$
+    \item $\Gamma \left(s\right) \cdot \Gamma \left(s + \dfrac{1}{2} \right)= \dfrac{\sqrt{\pi}}{2^{2s-1}} \cdot \Gamma \left(2s\right)$
+    \item $\displaystyle\prod_{r=1}^{n-1} \Gamma \left(\dfrac{r}{n} \right)=\dfrac{\left(2 \pi\right)^{\dfrac{n-1}{2} }}{\sqrt{n}} $
+\end{enumerate}
+\section{Beta Function}
+Let $m,n >0$, then the integral \begin{equation*}
+    \begin{split}
+        B(m,n)&=\displaystyle\int_{0}^{1} t^{m-1}\left(1-t\right)^{n-1} \, dt\\[2mm]
+        &=\displaystyle\int_{0}^{\infty} \dfrac{t^{m-1}}{\left(1+t\right)^{m+n}}  \, dt
+    \end{split}
+\end{equation*}
+is defined to be the Beta Function.
+\subsection{Properties of Beta Function}
+\begin{enumerate}[i.]
+    \item $B(m,n)=B(n,m)$
+    \item $B(m,n)=\dfrac{\Gamma \left(m\right) \Gamma \left(n\right)}{\Gamma \left(m+n\right)} $
+\end{enumerate}
+\section{Walli's Formula}
+\subsection{}
+To evaluate integrals of form, $$\displaystyle\int_{0}^{\sfrac{\pi}{2} } \sin^m x \cdot \cos^n x \, dx $$
+where, $m,n \in \mathbb{Z^+}$
+
+    \begin{align*}
+        \displaystyle\int_{0}^{\sfrac{\pi}{2}} \sin^m x \cdot \cos^n x  \, dx&=\displaystyle\int_{0}^{\sfrac{\pi}{2}} \sin^n x \cdot \cos^m x \, dx  \\[2mm]
+        &=\dfrac{\displaystyle\prod_{r\ge 0} \left(m-2r-1\right) \cdot \displaystyle\prod_{r\ge 0} \left(n-2r-1\right)}{\displaystyle\prod_{r\ge 0}  \left(m+n-2r\right)} \cdot \dfrac{\pi}{2} \tag{$m,n \in {\left\{2k:k \in \mathbb{N}\right\}}$ }\\
+        &= \dfrac{\displaystyle\prod_{r\ge 0}  \left(m-2r-1\right) \cdot \displaystyle\prod_{r\ge 0} \left(n-2r-1\right)}{\displaystyle\prod_{r\ge 0}  \left(m+n-2r\right)} \tag{Any one of $m,n$ is odd}
+    \end{align*}
+\subsection{}
+\begin{align*}
+    \displaystyle\int_{0}^{\sfrac{\pi}{2}} \sin^n x \, dx&=\displaystyle\int_{0}^{\sfrac{\pi}{2}}\cos^n x \, dx  \\[2mm]
+    &= \dfrac{\pi}{2} \cdot  \displaystyle\prod_{r\ge 0} \dfrac{n-2r-1}{n-2r}  \tag*{$n \in \left\{2k:k\in \mathbb{N}\right\}$}\\
+    &= \displaystyle\prod_{r\ge 0} \dfrac{n-2r-1}{n-2r} \tag*{$n \in \left\{2k-1:k\in \mathbb{N}\right\}$}
+\end{align*}
 \end{document}

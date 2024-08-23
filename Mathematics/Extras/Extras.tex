@@ -76,18 +76,36 @@ Let $E(x)$ be a function Even Symmetric about $x=a$ and\\ $O(x)$ be a function O
 $\therefore$
 \begin{equation*}
     \begin{split}
-    E(a+x)=E(a-x)\\
-    O(a+x)=-O(a-x)
+        E(a+x)=E(a-x)\\
+        O(a+x)=-O(a-x)
     \end{split}
 \end{equation*}
 such that, $$f(x)=E(x)+O(x)$$
-Hence, 
+Hence,
 \begin{equation*}
     \begin{split}
         E(x)=\dfrac{f(x)+f(2a-x)}{2}\\
-        O(x)=\dfrac{f(x)-f(2a-x)}{2}  
+        O(x)=\dfrac{f(x)-f(2a-x)}{2}
     \end{split}
 \end{equation*}
 
 $$f(x)=\underbrace{\dfrac{f(x)+f(2a-x)}{2}}_{\text{Even Symmetric Part}}+\underbrace{\dfrac{f(x)-f(2a-x)}{2} }_{\text{Odd Symmetric Part}}$$
+\section{If a function is Odd Symmetric about $x=a$ then it must vanish at $x=a$ (if defined)}
+Let $O(x)$ be a function Odd Symmetric about $x=a$\\
+$\therefore O(a+x)=-O(a-x)$\\
+Pluging $x=0$, We get,
+$$\boxed{O(a)=0}$$
+\section{Some Important Series}
+\begin{enumerate}[i.]
+    \item $\displaystyle\nsum[1.4]_{r=1}^{n} r = \dfrac{n(n+1)}{2} $
+    \item $\displaystyle\nsum[1.4]_{r=1}^{n} r^2=\dfrac{n(n+1)(2n+1)}{6} $
+    \item $\displaystyle\nsum[1.4]_{r=1}^{n} r^3=\left[\dfrac{n(n+1)}{2}\right]^2 $
+    \item $\displaystyle\nsum[1.4]_{k=1}^{n} ar^k=a \left(\dfrac{1-r^n}{1-r} \right)$
+    \item $\displaystyle\nsum[1.4]_{r=0}^{n-1} \sin (\alpha + r \beta)= \dfrac{\sin n \, \sfrac{\beta}{2}}{\sin \sfrac{\beta}{2}}  \cdot\sin \left[\alpha + (n-1)\beta\right] $
+    \item $\displaystyle\nsum[1.4]_{r=0}^{n-1} \cos (\alpha + r \beta)= \dfrac{\sin n \, \sfrac{\beta}{2}}{\sin \sfrac{\beta}{2}} \cdot \cos \left[\alpha + (n-1) \beta\right] $
+    \item $\displaystyle\nsum[1.4]_{r=1}^{\infty} \dfrac{(-1)^{r+1}}{r^2} = \dfrac{\pi^2}{12} $
+    \item $\displaystyle\nsum[1.4]_{r=1}^{\infty} \dfrac{1}{r^2}  = \dfrac{\pi^2}{6} $
+    \item $\displaystyle\nsum[1.4]_{r=0}^{\infty} \dfrac{1}{(2r+1)^2}=\dfrac{\pi^2}{8}  $
+    \item $\displaystyle\nsum[1.4]_{r=1}^{\infty} \dfrac{1}{(2r)^2} = \dfrac{\pi^2}{24}  $
+\end{enumerate}
 \end{document}
