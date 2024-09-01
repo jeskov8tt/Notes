@@ -67,7 +67,22 @@
 \section{Order and Degree of a DE}
 \subsection{Order of a DE}
 The order of a DE is the order of the highest order derivative it contains.
+\begin{itemize}
+    \item $nth$ order DE contains $n$ independent arbitrary constants.
+\end{itemize}
 \subsection{Degree of a DE}
 The degree of a DE is the degree of the highest order derivative it contains when all the derivatives in the DE are free of fractional powers.
-
+\section{Linear DE}
+A DE is linear if it is expressible in the form, $$\nsum[1.4]_{r=0}^{n} a_{r} \dv[r]{y}{x}=Q$$
+where, $a_{r}, Q$ are constant or functions of $x$
+\section{Formation of a DE}
+\begin{enumerate}[Step 1.]
+    \item Differentiate the given equation w.r.t the independent variable as many times as the number of arbitrary constants in it.
+    \item Eliminate the arbitrary constants.
+\end{enumerate}
+\section{Solution of DE}
+\subsection{Separable DE}
+If the DE $$\dv{y}{x}=f(x,y)$$ can be written as, $$\Psi (x) \, dx = \, \Phi (y) \, dy$$
+then, it is called a Separable DE.\\
+Solution of this type of DE can be found by integrating both sides w.r.t. $x$ after separting variables.
 \end{document}
